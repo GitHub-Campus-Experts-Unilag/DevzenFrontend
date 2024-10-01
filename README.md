@@ -5,6 +5,10 @@ in wierd cases.
 
 ****
 
+## What are we building?
+DevZen your go to application/tool for most of your Development work. The main aim of this is to create a tool that can help you automate some of your tasks. Thank you for deciding to contribute to this 🎉
+Here is the [figma link](https://www.figma.com/design/KEtyU67tfnDrIgxVuj9Hyw/DevZen?node-id=55-437&t=kg7kZEbCaRpb0lWN-1) 
+
 ## Stacks
 
 Here are the main tools/technologies that is being used for this build. They automatically form the prerequisites.

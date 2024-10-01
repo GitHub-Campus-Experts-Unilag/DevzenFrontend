@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# GCE Frontend Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GCE Frontend cohort template to used in every project except
+in wierd cases.
 
-Currently, two official plugins are available:
+****
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stacks
 
-## Expanding the ESLint configuration
+Here are the main tools/technologies that is being used for this build. They automatically form the prerequisites.
+- React JS
+- TypeScript
+- React Router
+- Tailwind CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## SETUP
 
-- Configure the top-level `parserOptions` property like this:
+### 1. Clone project
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```git
+  git clone https://github.com/GitHub-Campus-Experts-Unilag/DevzenFrontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```markdown
+  🍕. npm install 
 ```
+
+### 3. Create environment files and file them correctly
+
+```bash
+    .env.local
+```
+
+### 4. Start project
+
+```bash
+  npm run dev
+```
+
+
+## Project Structure
+
+```markdown
+src\
+ |--components\         # Folder for working on particular features
+    |-- converters\    # All logic and components that concerns the converters tool
+    |-- formatters\    # All logic and components that concerns the formatters tool
+    |-- generators\    # All logic and components that concerns the generators tool
+    |-- quickSketch\    # All logic and components that concerns the quickSketch tool
+ |--layouts\ # This is where the layout component (Sidebar) will be created then it can be used in the routes
+ |--assets\ # Evrything about media - icons, images, svgs
+ |--helpers\ # Here you can create a logic that you feel can be used in multiple places. More like extracting a logic for the sake of reusability
+ |--pages\
+    |--auth
+routes\      # All routes logic are embedded here
+main.tsx        # App entry point
+package.json  # All installed technologies that makes up this build 
+```
+
+### GUIDELINES
+
+****
+
+* When creating *new branch* if you're fixing a bug or implementing a feature follow this pattern
+  * fixing: *`fix/<name-of-fix>`*
+  * feature: *`feat/<name-of-feature>`*
+* Never commit directly into the *`main`* branch. Always create a new branch and PR.

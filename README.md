@@ -1,7 +1,6 @@
-# GCE Frontend Template
+# GCE Frontend
 
-GCE Frontend cohort template to used in every project except
-in wierd cases.
+GCE Frontend cohort template to used in every project
 
 ****
 

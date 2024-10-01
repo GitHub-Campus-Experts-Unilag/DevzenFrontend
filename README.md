@@ -6,15 +6,20 @@ in wierd cases.
 ****
 
 ## What are we building?
+
 DevZen your go to application/tool for most of your Development work. The main aim of this is to create a tool that can help you automate some of your tasks. Thank you for deciding to contribute to this 🎉
-Here is the [figma link](https://www.figma.com/design/KEtyU67tfnDrIgxVuj9Hyw/DevZen?node-id=55-437&t=kg7kZEbCaRpb0lWN-1) 
+Here is the [figma link](https://www.figma.com/design/KEtyU67tfnDrIgxVuj9Hyw/DevZen?node-id=55-437&t=kg7kZEbCaRpb0lWN-1)
 
 ## Stacks
 
 Here are the main tools/technologies that is being used for this build. They automatically form the prerequisites.
+
 - React JS
+
 - TypeScript
+
 - React Router
+
 - Tailwind CSS
 
 ## SETUP
@@ -43,7 +48,6 @@ Here are the main tools/technologies that is being used for this build. They aut
   npm run dev
 ```
 
-
 ## Project Structure
 
 ```markdown
@@ -67,7 +71,7 @@ package.json  # All installed technologies that makes up this build
 
 ****
 
-* When creating *new branch* if you're fixing a bug or implementing a feature follow this pattern
-  * fixing: *`fix/<name-of-fix>`*
-  * feature: *`feat/<name-of-feature>`*
-* Never commit directly into the *`main`* branch. Always create a new branch and PR.
+- When creating *new branch* if you're fixing a bug or implementing a feature follow this pattern
+  - fixing: *`fix/<name-of-fix>`*
+  - feature: *`feat/<name-of-feature>`*
+- Never commit directly into the *`main`* branch. Always create a new branch and PR.

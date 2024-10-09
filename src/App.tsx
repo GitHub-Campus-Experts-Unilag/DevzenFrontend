@@ -3,7 +3,11 @@ import { router } from "./routes";
 import './App.css'
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <div className="gradient-to-t w-screen min-h-screen">
+      <RouterProvider router={router} />
+    </div>
+  )
 }
 
 export default App

@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .gradient {
+        @apply from-green-90 to-green;
+    }
+
+    .gradient-to-t {
+        @apply bg-gradient-to-t gradient;
+    }
+
+    .gradient-to-b {
+        @apply bg-gradient-to-r gradient;
+    }
+
+    .gradient-to-t {
+        @apply bg-gradient-to-t gradient;
+    }
+
+    .gradient-to-l {
+        @apply bg-gradient-to-l gradient;
+    }
+
+    .gradient-to-r {
+        @apply bg-gradient-to-r gradient;
+    }
+}

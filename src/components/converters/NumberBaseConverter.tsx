@@ -65,7 +65,7 @@ function NumberBaseConverter(){
             setOctal("")
         }
         else{
-            setBinary(decimalValue.toString())
+            setBinary(decimalValue.toString(2))
             setOctal(decimalValue.toString(8))
             setHexadecimal(decimalValue.toString(16))
         }

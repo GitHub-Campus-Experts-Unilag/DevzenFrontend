@@ -1,0 +1,13 @@
+input{
+    border: 2px solid black
+}
+
+.numberBaseConverterContainer{
+    display:flex;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}

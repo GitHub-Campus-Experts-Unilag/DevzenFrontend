@@ -1,4 +1,6 @@
 import { useState } from "react"
+import './NumberBaseConverter.css'
+
 function NumberBaseConverter(){
     const [binary, setBinary] = useState("")
     const [octal, setOctal] = useState("")
@@ -70,7 +72,7 @@ function NumberBaseConverter(){
     }
 
     return(
-        <>
+        <div className="numberBaseConverterContainer">
             <h1>Number Base Converter</h1>
             <p>Enter a number in any filed, and the other bases will be calculated automatically</p>
             <form action="">
@@ -85,7 +87,7 @@ function NumberBaseConverter(){
                 <label htmlFor="">Select base: </label>
                 <input type="" />
             </form>
-        </>
+        </div>
     )
 }
 export default NumberBaseConverter

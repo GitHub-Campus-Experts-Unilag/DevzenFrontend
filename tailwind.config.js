@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
@@ -47,6 +49,15 @@ export default {
           DEFAULT: "#098597",
         },
       },
+      backgroundColor: {
+        "black-90": "hsl(0deg, 0%, 7%)"
+      },
+      backgroundImage: {
+        "gradient-primary": "linear-gradient(to right, hsl(188deg, 89%, 10%), hsl(188deg, 89%, 31%))"
+      },
+      fontFamily: {
+        "primary": ['"SF Pro Display"', ...defaultTheme.fontFamily.sans]
+      }
     },
   },
   plugins: [],

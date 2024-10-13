@@ -1,13 +1,68 @@
+body{
+    background-color: #131313;
+    color:whitesmoke;
+    margin-left: 10rem;
+}
+
 input{
-    border: 2px solid black
+    border: 2px solid black;
+    background-color: #303030;
+    color: white;
+    width: 80%
 }
 
 .numberBaseConverterContainer{
     display:flex;
     flex-direction: column;
+    margin: 2rem;
+    gap: 8px;
 }
 
-form{
-    display: flex;
+.number-base-converter-heading{
+    margin: 36px 24px 36px 24px;
+    display:flex;
     flex-direction: column;
+    gap: 16px
+}
+
+.number-base-converter-heading h1{
+    font-size: 1.5rem;
+}
+
+.number-base-converter-heading p{
+    color: #bdbdbd;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.each-base-conversion-heading{
+    margin-bottom: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.input-and-copy{
+    display:flex;
+    gap: 5px
+}
+
+.clear-btn, .copy-btn{
+    background-color: #303030;
+    font-size: 0.8rem;
+    padding: 2px 6px
+}
+
+.base-specific-section{
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+hr{
+    width: 84%;
+    color: #303030;
+    background-color: #303030;
+}
+
+.main-conversion-section{
+    margin-left: 24px;
 }

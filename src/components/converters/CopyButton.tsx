@@ -14,7 +14,7 @@ function CopyButton({value}: {value: string}) {
     }
     return(
         <button className="copy-btn" onClick={() => copyToClipboard()}>
-            Copy <ContentCopyIcon/>
+            Copy <ContentCopyIcon className='copy-icon'/>
         </button>
     )
 }

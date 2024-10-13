@@ -22,7 +22,8 @@ input{
     margin: 36px 24px 36px 24px;
     display:flex;
     flex-direction: column;
-    gap: 16px
+    gap: 16px;
+    
 }
 
 .number-base-converter-heading h1{
@@ -39,6 +40,8 @@ input{
     margin-bottom: 16px;
     display: flex;
     gap: 8px;
+    align-items: center;
+    align-self: center;
 }
 
 .input-and-copy{
@@ -49,7 +52,12 @@ input{
 .clear-btn, .copy-btn{
     background-color: #303030;
     font-size: 0.8rem;
-    padding: 2px 6px
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 3px
 }
 
 .base-specific-section{
@@ -66,3 +74,16 @@ hr{
 .main-conversion-section{
     margin-left: 24px;
 }
+
+.base-selector{
+    background-color: #303030;
+    padding: 1px px;
+    border-radius: 6px;
+}
+
+.increase-btn, .decrease-btn{
+    background-color: #545353;
+    margin: 2px;
+    padding: 2px;
+}
+

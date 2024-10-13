@@ -10,25 +10,24 @@ function NumberBaseConverter() {
   const [octal, setOctal] = useState("");
   const [decimal, setDecimal] = useState("");
   const [hexadecimal, setHexadecimal] = useState("");
+  const [selectedBase, setSelectedBase] = useState(36);
+  const [selectedBaseInput, setSelectedBaseInput] = useState("");
 
   //Clear all inputs
-  const clearBinary = () => {
-    setBinary("")
-  }
+  const clearBinary = () => setBinary("");
+  const clearOctal = () => setOctal("");
+  const clearDecimal = () => setDecimal("");
+  const clearHex = () => setHexadecimal("");
+  const clearSelectedBaseInput = () => setSelectedBaseInput("");
 
-  const clearOctal = () => {
-    setOctal("")
-  }
+  //Base Increase/ decrease in select base section
+  const increaseBase = () => {
+    setSelectedBase((prevBase) => prevBase + 1);
+  };
 
-  const clearDecimal = () => {
-    setDecimal("")
-  }
-
-  const clearHex = () => {
-    setHexadecimal("")
-  }
-
-
+  const decreaseBase = () => {
+    setSelectedBase((prevBase) => (prevBase > 2 ? prevBase - 1 : prevBase));
+  };
 
   const handleBinaryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const binaryInput = e.target.value;
@@ -56,7 +55,7 @@ function NumberBaseConverter() {
     } else {
       setDecimal(decimalValue.toString());
       setBinary(decimalValue.toString(2));
-      setHexadecimal(decimalValue.toString(16));
+      setHexadecimal(decimalValue.toString(16).toUpperCase());
     }
   };
 
@@ -86,7 +85,29 @@ function NumberBaseConverter() {
     } else {
       setBinary(decimalValue.toString(2));
       setOctal(decimalValue.toString(8));
-      setHexadecimal(decimalValue.toString(16));
+      setHexadecimal(decimalValue.toString(16).toUpperCase());
+    }
+  };
+
+  const handleSelectedBaseInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const input = e.target.value;
+    setSelectedBaseInput(input);
+
+    //Validate input for selected base
+
+    const decimalValue = parseInt(input, selectedBase);
+    if (isNaN(decimalValue)) {
+      clearBinary();
+      clearOctal();
+      clearHex();
+      setDecimal("");
+    } else {
+      setDecimal(decimalValue.toString());
+      setBinary(decimalValue.toString(2));
+      setOctal(decimalValue.toString(8));
+      setHexadecimal(decimalValue.toString(16).toUpperCase());
     }
   };
 
@@ -104,11 +125,11 @@ function NumberBaseConverter() {
         <div className="base-specific-section">
           <div className="each-base-conversion-heading">
             <label htmlFor="">Binary(Base2): </label>
-            <ClearButton clear={clearBinary}/>
+            <ClearButton clear={clearBinary} />
           </div>
           <div className="input-and-copy">
             <input type="text" onChange={handleBinaryChange} value={binary} />
-            <CopyButton  value ={binary}/>
+            <CopyButton value={binary} />
           </div>
         </div>
         <hr />
@@ -116,11 +137,11 @@ function NumberBaseConverter() {
         <div className="base-specific-section">
           <div className="each-base-conversion-heading">
             <label htmlFor="">Octal(Base 8): </label>
-            <ClearButton  clear ={clearOctal}/>
+            <ClearButton clear={clearOctal} />
           </div>
           <div className="input-and-copy">
             <input type="text" onChange={handleOctalChange} value={octal} />
-            <CopyButton value={octal}/>
+            <CopyButton value={octal} />
           </div>
         </div>
         <hr />
@@ -128,11 +149,11 @@ function NumberBaseConverter() {
         <div className="base-specific-section">
           <div className="each-base-conversion-heading">
             <label htmlFor="">Decimal (Base 10)</label>
-            <ClearButton clear={clearDecimal}/>
+            <ClearButton clear={clearDecimal} />
           </div>
           <div className="input-and-copy">
             <input type="text" onChange={handleDecimalChange} value={decimal} />
-            <CopyButton value={decimal}/>
+            <CopyButton value={decimal} />
           </div>
         </div>
         <hr />
@@ -148,7 +169,7 @@ function NumberBaseConverter() {
               onChange={handleHexadecimalChange}
               value={hexadecimal}
             />
-            <CopyButton value={hexadecimal}/>
+            <CopyButton value={hexadecimal} />
           </div>
         </div>
         <hr />
@@ -156,11 +177,20 @@ function NumberBaseConverter() {
         <div className="base-specific-section">
           <div className="each-base-conversion-heading">
             <label htmlFor="">Select base: </label>
-            
+            <div className="base-selector">
+              <button onClick={decreaseBase} className="increase-btn">&lt;</button>
+              <span>{selectedBase}</span>
+              <button onClick={increaseBase} className="decrease-btn">&gt;</button>
+            </div>
+            <ClearButton clear={clearSelectedBaseInput} />
           </div>
           <div className="input-and-copy">
-            <input type="" />
-            
+            <input
+              type="text"
+              onChange={handleSelectedBaseInputChange}
+              value={selectedBaseInput}
+            />
+            <CopyButton value={selectedBaseInput}/>
           </div>
         </div>
         <hr />

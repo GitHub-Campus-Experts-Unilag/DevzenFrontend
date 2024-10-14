@@ -1,89 +1,12 @@
 body{
     background-color: #131313;
-    color:whitesmoke;
-    margin-left: 10rem;
+    color:whitesmoke
 }
 
-input{
-    border: 2px solid black;
-    background-color: #303030;
-    color: white;
-    width: 80%
+
+.fas, .fa-times{
+    margin-bottom: -3px;
 }
 
-.numberBaseConverterContainer{
-    display:flex;
-    flex-direction: column;
-    margin: 2rem;
-    gap: 8px;
-}
 
-.number-base-converter-heading{
-    margin: 36px 24px 36px 24px;
-    display:flex;
-    flex-direction: column;
-    gap: 16px;
-    
-}
-
-.number-base-converter-heading h1{
-    font-size: 1.5rem;
-}
-
-.number-base-converter-heading p{
-    color: #bdbdbd;
-    font-size: 16px;
-    line-height: 21px;
-}
-
-.each-base-conversion-heading{
-    margin-bottom: 16px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    align-self: center;
-}
-
-.input-and-copy{
-    display:flex;
-    gap: 5px
-}
-
-.clear-btn, .copy-btn{
-    background-color: #303030;
-    font-size: 0.8rem;
-    padding: 2px 6px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    gap: 3px
-}
-
-.base-specific-section{
-    margin-bottom: 16px;
-    margin-top: 16px;
-}
-
-hr{
-    width: 84%;
-    color: #303030;
-    background-color: #303030;
-}
-
-.main-conversion-section{
-    margin-left: 24px;
-}
-
-.base-selector{
-    background-color: #303030;
-    padding: 1px px;
-    border-radius: 6px;
-}
-
-.increase-btn, .decrease-btn{
-    background-color: #545353;
-    margin: 2px;
-    padding: 2px;
-}
 

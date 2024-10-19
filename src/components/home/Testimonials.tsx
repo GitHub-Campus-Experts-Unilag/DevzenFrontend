@@ -103,10 +103,10 @@ const Testimonials = () => {
                     </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious
-                    className="z-20 top-auto -bottom-24 md:left-[38%] md:-bottom-48 md:w-12 md:h-12 lg:w-16 lg:h-16 lg:left-[42%]"
+                 className="top-auto scale-150 -bottom-24 bg-black-60 text-black-40 border-none left-[30%] md:left-[38%] md:-bottom-48 lg:left-[42%]"
                 />
                 <CarouselNext
-                    className="z-20 top-auto -bottom-24 md:right-[38%] md:-bottom-48 md:w-12 md:h-12 lg:w-16 lg:h-16 lg:right-[42%]"
+                 className="top-auto scale-150 -bottom-24 bg-black-60 text-black-40 border-none right-[30%] md:right-[38%] md:-bottom-48 lg:right-[42%]"
                 />
             </Carousel>
         </section>

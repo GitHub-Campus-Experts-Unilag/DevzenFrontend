@@ -94,10 +94,10 @@ export default {
   			'black-90': 'hsl(0deg, 0%, 7%)'
   		},
   		backgroundImage: {
-  			'gradient-primary': 'linear-gradient(to right, hsl(188deg, 89%, 10%), hsl(188deg, 89%, 31%))'
+  			'gradient-primary': 'linear-gradient(to right, #032C32, #098597)'
   		},
   		fontFamily: {
-  			primary: ['SF Pro Display"', ...defaultTheme.fontFamily.sans]
+  			primary: ['"SF Pro Display"', ...defaultTheme.fontFamily.sans]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

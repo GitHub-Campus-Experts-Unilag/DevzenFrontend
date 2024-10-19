@@ -92,6 +92,7 @@
         font-weight: 900;
         font-style: italic;
     }
+
   :root {
         --background: 0 0% 100%;
         --foreground: 0 0% 3.9%;
@@ -151,7 +152,13 @@
   * {
     @apply border-border;
     }
+    html {
+        @apply scroll-smooth scroll-pt-24;
+    }
   body {
     @apply bg-background text-foreground;
+    }
+    abbr {
+    @apply no-underline;
     }
 }

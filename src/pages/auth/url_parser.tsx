@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Icon from "../../assets/grid-4.svg";
+import CloseIcon from "../../assets/close.svg"
+import CopyIcon from "../../assets/copy.svg"
+
 
 interface UrlObject {
     protocol: string;
@@ -14,6 +17,7 @@ function URLParser() {
     const [urlData, setUrlData] = useState<UrlObject | null>(null);
     const [searchParams, setSearchParams] = useState<string[]>([]);
     const [showFields, setShowFields] = useState(true);
+    const [isCopied, setIsCopied] = useState(false);
 
     const handleClick = () => {
         const url = new URL(urlString.startsWith("http") ? urlString : `https://${urlString}`);
@@ -48,23 +52,49 @@ function URLParser() {
     };
 
     const toggleFields = () => {
-        setShowFields(prev => !prev); // Toggle the visibility of the fields
+        setShowFields(prev => !prev); 
     };
+
+
+    const Copy = () => {
+        
+        const textToCopy = searchParams.join('\n');
+
+        if (textToCopy) {
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    setIsCopied(true);
+                })
+                .catch((err) => {
+                    console.error("Failed to copy text: ", err);
+                });
+        } else {
+            alert("No parameters to copy!");
+        }
+    };
+
+
+    const clear =()=>{
+        setUrlString('')
+        setUrlData(null);
+        setSearchParams([]);
+        setIsCopied(false);
+    }
 
     return (
         <>
-            <div className="bg-black min-h-screen text-white flex flex-col overflow-hidden">
+            <div className="bg-[#131313] min-h-screen text-[#BDBDBD] flex flex-col overflow-hidden">
                 
                 <div className="flex justify-between items-center p-4">
                     <div>
-                        <h1 className="text-2xl mb-1">URL Parser</h1>
-                        <p >Enter a URL in the input field to parse its components</p>
+                        <h1 className="text-2xl text-[#D7D7D7] mb-1">URL Parser</h1>
+                        <p className="text-sm" >Enter a URL in the input field to parse its components</p>
                     </div>
                     
                     <img 
                         src={Icon} 
                         alt="icon" 
-                        className="ml-auto cursor-pointer" 
+                        className="ml-auto cursor-pointer hidden lg:inline-block" 
                         onClick={toggleFields} 
                     />
                 </div>
@@ -76,10 +106,19 @@ function URLParser() {
                         
                         <div>
                             <div className="flex justify-between mb-3">
-                                <p>Input:</p>
+                                <div className="flex gap-4">
+                                    <p>Input:</p>
+                                    <button
+                                        onClick={clear} 
+                                        className="flex items-center bg-gray-500 text-[#BDBDBD] text-sm px-0.5  rounded">
+                                        Clear
+                                        <img src={CloseIcon} className=" w-4 h-4"/>
+                                    </button>
+                                </div>
+                                
                                 <button
                                     onClick={handleClick}
-                                    className="bg-gray-500 text-white rounded"
+                                    className="bg-gray-500 text-[#BDBDBD] rounded px-1"
                                 >
                                     Change
                                 </button>
@@ -89,21 +128,21 @@ function URLParser() {
                                 value={urlString}
                                 onChange={(e) => setUrlString(e.target.value)}
                                 placeholder="Enter URL..."
-                                className="text-black w-full h-96 p-2 resize-none bg-gray-500 border border-gray-500 rounded"
+                                className="text-[#BDBDBD] w-full h-96 p-2 resize-none bg-[#1D1D1D] border border-gray-500 rounded"
                                 style={{ overflow: "auto", whiteSpace: "pre-wrap" }}
                             />
                         </div>
                     </div>
-
+                    <hr className="w-[1px] h-auto bg-gray-300 rotate-180 border-none"></hr>
                     {/* Output Section */}
                     {showFields && ( 
                         <div className="flex-none w-full md:w-1/3 p-4 flex flex-col">
-                            <div className="flex justify-between mb-2">
-                                <h1 className="text-lg font-bold">Field</h1>
-                                <h1 className="text-lg font-bold">Value</h1>
+                            <div className="flex justify-between mb-2 text-[#BDBDBD">
+                                <h2 >Field</h2>
+                                <h2 >Value</h2>
                             </div>
-                            <div className="grid grid-cols-2 gap-4 bg-gray-600 p-4 rounded">
-                                <div className="font-semibold">
+                            <div className="grid grid-cols-2 gap-4 bg-[#1D1D1D] text-[#BDBDBD] p-4 rounded">
+                                <div >
                                     <ul className="space-y-2">
                                         <li>Protocol</li>
                                         <li>Host</li>
@@ -113,7 +152,7 @@ function URLParser() {
                                     </ul>
                                 </div>
                                 <div className="overflow-hidden">
-                                    <ul className="space-y-2">
+                                    <ul className="space-y-2 text-[#BDBDBD]">
                                         <li>{urlData ? urlData.protocol : ''}</li>
                                         <li>{urlData ? urlData.host : ''}</li>
                                         <li>{urlData ? urlData.path : ''}</li>
@@ -122,13 +161,22 @@ function URLParser() {
                                     </ul>
                                 </div>
                             </div>
-
-                            <h1 className="mt-4 mb-2">Output:</h1>
+                            <hr className="border-t border-gray-300 my-4" />
+                            <div className="flex gap-4 mb-3">
+                                <h2 className="text-[#BDBDBD]">Output:</h2>
+                                <button
+                                    onClick={Copy} 
+                                    className="flex items-center bg-gray-500 text-[#BDBDBD] text-sm px-0.5  rounded">
+                                    {isCopied ? "Copied!!!" : "Copy"} 
+                                    {!isCopied && <img src={CopyIcon} className="w-4 h-4 ml-1"/>} 
+                                </button>
+                            </div>
+                            
                             <div className="w-full flex-grow">
                                 <textarea
                                     value={searchParams.length > 0 ? searchParams.join('\n') : 'No parameters found'}
                                     readOnly
-                                    className="text-black w-full h-72 max-h-screen p-2 bg-gray-500 resize-none border border-gray-500 rounded"
+                                    className="text-[#BDBDBD] w-full h-72 max-h-screen p-2 bg-[#1D1D1D] resize-none border border-gray-500 rounded"
                                     style={{ overflow: "auto", whiteSpace: "pre-wrap" }}
                                 />
                             </div>

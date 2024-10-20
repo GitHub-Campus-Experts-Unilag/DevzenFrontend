@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="gradient-to-t w-screen min-h-screen">
+    <div>
       <RouterProvider router={router} />
     </div>
   )

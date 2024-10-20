@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -87,6 +89,15 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
+  		},
+  		backgroundColor: {
+  			'black-90': 'hsl(0deg, 0%, 7%)'
+  		},
+  		backgroundImage: {
+  			'gradient-primary': 'linear-gradient(to right, #032C32, #098597)'
+  		},
+  		fontFamily: {
+  			primary: ['"SF Pro Display"', ...defaultTheme.fontFamily.sans]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

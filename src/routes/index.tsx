@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import SignIn from "../pages/auth/SignIn";
 import { Feedback } from "../pages/Feedback";
+import NumberBaseConverter from '../components/converters/NumberBaseConverter'
 
 export const router = createBrowserRouter([ 
     {
@@ -10,5 +11,9 @@ export const router = createBrowserRouter([
     {
         path: "/feedback",
         element: <Feedback />
+    },
+    {
+        path: "/numberBaseConverter",
+        element: <NumberBaseConverter/>
     }
 ])

@@ -1,2 +1,3 @@
 import Cancel from './cancel.svg'
-export {Cancel}
+import Logo from './logo.svg'
+export {Cancel, Logo}

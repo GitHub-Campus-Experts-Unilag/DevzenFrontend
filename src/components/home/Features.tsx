@@ -37,7 +37,7 @@ const Features = () => {
             className="my-40"
         >
             <header className="text-center">
-                <h2 className="text-gray-10 font-bold text-[3.5rem] mb-2">Completely Free & Open Source</h2>
+                <h2 className="text-gray-10 font-bold text-[clamp(1.5rem,calc(1.5rem+2vw),3.5rem)] mb-2">Completely Free & Open Source</h2>
                 <p className="text-gray-30 text-[1.375rem] mb-24 max-w-[849px] mx-auto">Unlock unlimited access to powerful tools, fully customizable and community-driven, at no cost to you.</p>
             </header>
 

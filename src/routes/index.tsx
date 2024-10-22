@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
+import Layout from "@/layout/layout";
 import SignIn from "../pages/auth/SignIn";
 
 import URLParser from "../pages/auth/url_parser";
@@ -10,7 +11,11 @@ import { StringConverter } from "@/components/converters/StringConverter";
 export const router = createBrowserRouter([
     {
         path: "/url_parser",
-        element: <URLParser/>,
+        element: (
+            <Layout>
+                <URLParser/>
+            </Layout>
+        )
     }, 
     {
         path: "/",
@@ -28,5 +33,4 @@ export const router = createBrowserRouter([
         path: "/stringcase",
         element: <StringConverter />
     }
-
 ])

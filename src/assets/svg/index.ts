@@ -1,2 +1,7 @@
 import Cancel from './cancel.svg'
-export {Cancel}
+import ClearInput from './clear.svg'
+import Compress from './compress.svg'
+import Copy from './copy.svg'
+import ArrowDown from './arrowDown.svg'
+
+export {Cancel, ClearInput,Compress,Copy,ArrowDown}

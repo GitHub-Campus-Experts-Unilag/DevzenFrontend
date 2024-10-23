@@ -1,10 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
 import DashboardLayout from "@/layout/layout";
-import SignIn from "../pages/auth/SignIn";
 
-import { Feedback } from "../pages/Feedback";
-import { StringConverter } from "@/components/converters/StringConverter";
+import Home from "@/pages/Home";
+import SignIn from "@/pages/auth/SignIn";
+import Feedback from "@/pages/Feedback";
 
 // Quick Sketch
 import Zenboard from "@/pages/quick-sketch/zenboard";
@@ -29,14 +28,7 @@ import HTMLPreview from "@/pages/generators/html-preview";
 
 
 export const router = createBrowserRouter([
-    {
-        // path: "/url_parser",
-        // element: (
-        //     <DashboardLayout>
-        //         <URLParser/>
-        //     </DashboardLayout>
-        // )
-    },
+
     {
         path: "/",
         element: <Home />,
@@ -48,6 +40,10 @@ export const router = createBrowserRouter([
             {
                 path: "quick-sketch",
                 children: [
+                    {
+                        index: true,
+                        element: <Zenboard />
+                    },
                     {
                         path: "zenboard",
                         element: <Zenboard />
@@ -77,8 +73,11 @@ export const router = createBrowserRouter([
                 path: "converters",
                 children: [
                     {
-                        path: "url-parser",
                         index: true,
+                        element: <URLParser />
+                    },
+                    {
+                        path: "url-parser",
                         element: <URLParser />
                     },
                     {
@@ -102,8 +101,11 @@ export const router = createBrowserRouter([
                 path: "generators",
                 children: [
                     {
-                        path: "jwt-debugger",
                         index: true,
+                        element: <JWTDebugger />
+                    },
+                    {
+                        path: "jwt-debugger",
                         element: <JWTDebugger />
                     },
                     {
@@ -130,9 +132,5 @@ export const router = createBrowserRouter([
     {
         path: "feedback",
         element: <Feedback />
-    },
-    {
-        path: "/stringcase",
-        element: <StringConverter />
     }
 ])

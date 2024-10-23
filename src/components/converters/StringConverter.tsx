@@ -4,7 +4,10 @@ import { OutputStringConverter } from "./OutputStringConverter"
 import { useState } from "react"
 export const StringConverter = () => {
   const [inputValue,setinputValue] = useState('')
+  const [dropDown,setDropdown] = useState(false)
   return (
+  <>
+    <p onClick={()=> setDropdown(false)} className={dropDown?'overlay bg-black opacity-0 z-20 fixed h-screen w-full top-0 left-0 right-0': 'hidden'}></p>
     <div className="bg-[#131313] h-screen px-6 tracking-tight overflow-hidden">
       <header className="mb-8">
         <div className="flex justify-between items-center mb-4">
@@ -15,8 +18,9 @@ export const StringConverter = () => {
       </header> 
       <main className="flex gap-x-12">
         <InputStringConverter inputValue={inputValue} setInputValue={setinputValue}/>
-        <OutputStringConverter inputValue={inputValue}/>
+        <OutputStringConverter inputValue={inputValue} setinputValue={setinputValue} dropDown={dropDown} setDropdown={setDropdown}/>
       </main>
     </div>
+  </>
   )
 }

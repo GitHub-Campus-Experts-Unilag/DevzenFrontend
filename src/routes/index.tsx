@@ -4,6 +4,7 @@ import DashboardLayout from "@/layout/layout";
 import SignIn from "../pages/auth/SignIn";
 
 import { Feedback } from "../pages/Feedback";
+import { StringConverter } from "@/components/converters/StringConverter";
 
 // Quick Sketch
 import Zenboard from "@/pages/quick-sketch/zenboard";
@@ -129,5 +130,9 @@ export const router = createBrowserRouter([
     {
         path: "feedback",
         element: <Feedback />
+    },
+    {
+        path: "/stringcase",
+        element: <StringConverter />
     }
 ])

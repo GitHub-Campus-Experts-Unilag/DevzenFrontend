@@ -23,27 +23,29 @@ const Home = () => {
             </main>
             <Footer />
 
-            <img
-                src={blurImg}
-                alt=""
-                className="absolute -top-80 -left-[600px]"
-            />
-            <img
-                src={blurImg}
-                alt=""
-                className="absolute top-[100px] -right-[450px]"
-            />
-            <img
-                src={blurImg}
-                alt=""
-                className="absolute bottom-[1800px] -left-[550px]"
-            />
-            <img
-                src={blurImg}
-                alt=""
-                className="absolute bottom-[800px] -right-[450px]"
-            />
+            <div className="hidden lg:block">
+                <img
+                    src={blurImg}
+                    alt=""
+                    className="absolute -top-80 -left-[600px]"
+                />
+                <img
+                    src={blurImg}
+                    alt=""
+                    className="absolute top-[100px] -right-[450px]"
+                />
+                <img
+                    src={blurImg}
+                    alt=""
+                    className="absolute bottom-[1800px] -left-[550px]"
+                />
+                <img
+                    src={blurImg}
+                    alt=""
+                    className="absolute bottom-[800px] -right-[450px]"
+                />
 
+            </div>
         </div>
     )
 }

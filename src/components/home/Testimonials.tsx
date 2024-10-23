@@ -18,7 +18,7 @@ const Testimonials = () => {
             className="flex flex-col items-center mb-96"
         >
             <header className="text-center">
-                <h2 className="text-gray-10 font-bold text-[3.5rem] mb-2">What Developers Are Saying</h2>
+                <h2 className="text-gray-10 font-bold text-[clamp(1.5rem,calc(1.5rem+2vw),3.5rem)] mb-2">What Developers Are Saying</h2>
                 <p className="text-gray-30 text-[1.375rem] mb-24 max-w-[849px] mx-auto">See how DevZen is transforming workflows and boosting productivity for developers worldwide.</p>
             </header>
 

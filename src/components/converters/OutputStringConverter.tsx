@@ -1,33 +1,34 @@
 type OutputProps = {
     inputValue: string
+    outputValue: string
     dropDown: boolean
-    setinputValue: React.Dispatch<React.SetStateAction<string>>
+    setOutputValue: React.Dispatch<React.SetStateAction<string>>
     setDropdown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 import { useState } from "react"
 import {ArrowDown, Copy} from "../../assets/svg"
-export const OutputStringConverter = ({inputValue,setinputValue,setDropdown,dropDown}:OutputProps) => {
+export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputValue,setOutputValue}:OutputProps) => {
     const [cases,setCase] = useState('camelCase')
     const handleCase=(e:any)=>{
         if(e.target.id == 'camelcase'){
           setCase('camelCase')
-          setinputValue(inputValue.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()))
+          setOutputValue(inputValue.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()))
         } 
         if(e.target.id == 'lowercase'){
           setCase('lowercase')
-          setinputValue(inputValue.toLowerCase())
+          setOutputValue(inputValue.toLowerCase())
         }
         if(e.target.id == 'pascalcase'){
           setCase('PascalCase')
-          setinputValue(inputValue.toLowerCase().replace(/(?:^|\s|-|_)\w/g, (match) => match.toUpperCase()).replace(/\s|-|_/g, ""))
+          setOutputValue(inputValue.toLowerCase().replace(/(?:^|\s|-|_)\w/g, (match) => match.toUpperCase()).replace(/\s|-|_/g, ""))
         } 
         if(e.target.id == 'snakecase'){
           setCase('snake_case')
-          setinputValue(inputValue.toLowerCase().replace(/\s+/g, '_'))
+          setOutputValue(inputValue.toLowerCase().replace(/\s+/g, '_'))
         } 
         if(e.target.id == 'uppercase'){
           setCase('UPPERCASE')
-          setinputValue(inputValue.toUpperCase())
+          setOutputValue(inputValue.toUpperCase())
         }
         setDropdown(false)
         
@@ -50,10 +51,10 @@ export const OutputStringConverter = ({inputValue,setinputValue,setDropdown,drop
                   <p onClick={handleCase} id="uppercase" className="px-2 py-[5px] rounded-md hover:bg-[#303030]">UPPERCASE</p>
                 </div>
               </div>
-              <img src={Copy} alt="CopyButton" onClick={()=>navigator.clipboard.writeText(inputValue)}/>
+              <img src={Copy} alt="CopyButton" onClick={()=>navigator.clipboard.writeText(outputValue)}/>
             </div>
           </div>
-          <p className="h-screen w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{inputValue}</p>
+          <p className="h-screen w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{outputValue}</p>
         </section>
   )
 }

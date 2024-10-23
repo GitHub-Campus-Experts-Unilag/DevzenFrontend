@@ -1,14 +1,18 @@
 type InputProps ={
     inputValue: string
+    outputValue: string
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
+    setOutputValue: React.Dispatch<React.SetStateAction<string>>
 }
 import { ClearInput } from "@/assets/svg"
-export const InputStringConverter = ({inputValue,setInputValue}: InputProps) => {
+export const InputStringConverter = ({inputValue,setInputValue,setOutputValue}: InputProps) => {
     const handleChange=(e:React.ChangeEvent<HTMLTextAreaElement>)=>{
         setInputValue(e.target.value)
+        setOutputValue(e.target.value)
     }
     const clearInput=()=>{
         setInputValue('')
+        setOutputValue('')
     }
   return (
     <section className="w-[50%]">

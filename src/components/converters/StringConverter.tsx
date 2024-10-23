@@ -4,6 +4,7 @@ import { OutputStringConverter } from "./OutputStringConverter"
 import { useState } from "react"
 export const StringConverter = () => {
   const [inputValue,setinputValue] = useState('')
+  const [outputValue,setOutputValue] = useState('')
   const [dropDown,setDropdown] = useState(false)
   return (
   <>
@@ -17,8 +18,8 @@ export const StringConverter = () => {
         <p className="font-medium text-[#BDBDBD]">Enter your text to convert it to your desired case format.</p>
       </header> 
       <main className="flex gap-x-12">
-        <InputStringConverter inputValue={inputValue} setInputValue={setinputValue}/>
-        <OutputStringConverter inputValue={inputValue} setinputValue={setinputValue} dropDown={dropDown} setDropdown={setDropdown}/>
+        <InputStringConverter outputValue={outputValue} setOutputValue={setOutputValue} inputValue={inputValue} setInputValue={setinputValue}/>
+        <OutputStringConverter outputValue={outputValue} inputValue={inputValue} setOutputValue={setOutputValue} dropDown={dropDown} setDropdown={setDropdown}/>
       </main>
     </div>
   </>

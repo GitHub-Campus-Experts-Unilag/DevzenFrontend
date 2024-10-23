@@ -54,7 +54,7 @@ export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputVal
               <img src={Copy} alt="CopyButton" onClick={()=>navigator.clipboard.writeText(outputValue)}/>
             </div>
           </div>
-          <p className="h-screen w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{outputValue}</p>
+          <p className="h-screen overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{outputValue}</p>
         </section>
   )
 }

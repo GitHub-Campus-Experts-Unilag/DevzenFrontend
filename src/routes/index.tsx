@@ -5,6 +5,7 @@ import SignIn from "../pages/auth/SignIn";
 
 import URLParser from "../pages/auth/url_parser";
 import { Feedback } from "../pages/Feedback";
+import { StringConverter } from "@/components/converters/StringConverter";
 
 
 export const router = createBrowserRouter([
@@ -27,5 +28,9 @@ export const router = createBrowserRouter([
     {
         path: "/feedback",
         element: <Feedback />
+    },
+    {
+        path: "/stringcase",
+        element: <StringConverter />
     }
 ])

@@ -1,9 +1,7 @@
 import { useState } from "react";
-import "./NumberBaseConverter.css";
-import "./ClearButton";
-import "./CopyButton";
-import ClearButton from "./ClearButton";
-import CopyButton from "./CopyButton";
+import "@/components/converters/number-base-converter/NumberBaseConverter.css";
+import ClearButton from "@/components/converters/number-base-converter/ClearButton";
+import CopyButton from "@/components/converters/number-base-converter/CopyButton";
 
 function NumberBaseConverter() {
   const [binary, setBinary] = useState("");

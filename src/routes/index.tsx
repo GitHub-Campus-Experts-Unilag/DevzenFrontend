@@ -30,8 +30,8 @@ import HTMLPreview from "@/pages/generators/html-preview";
 export const router = createBrowserRouter([
 
     {
-        path: "/",
-        element: <Home />,
+        path: "/csv_to_json",
+        element: <CsvToJson/>,
     },
     {
         path: "/dashboard",

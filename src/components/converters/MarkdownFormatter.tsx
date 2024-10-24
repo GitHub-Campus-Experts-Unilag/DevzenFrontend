@@ -4,13 +4,16 @@ import CopyButton from "./CopyButton";
 import OpenInBrowserBtn from "./OpenInBrowserBtn";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
 
 function MarkdownFormatter() {
-  const [markdown, setMarkdown] = useState("");
+  const [markdown, setMarkdown] = useState("# Hello");
 
   const clearMarkdownInput = () => {
     setMarkdown("");
   };
+
+  console.log(markdown)
   return (
     <div className="flex flex-col m-8 gap-2 bg- text-whitesmoke ml-8 text-gray-50">
       <div className="flex flex-col mx-6 my-9 gap-4 bg-black-90">
@@ -43,7 +46,9 @@ function MarkdownFormatter() {
             <OpenInBrowserBtn />
             <CopyButton value={markdown} />
           </div>
-          <div className="markdown-output"><ReactMarkdown>{markdown}</ReactMarkdown></div>
+          <div className="markdown-output">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./NumberBaseConverter.css";
+import "./converters.css";
 import "./ClearButton";
 import "./CopyButton";
 import ClearButton from "./ClearButton";
@@ -152,10 +152,10 @@ function NumberBaseConverter() {
   };
 
   return (
-    <div className="flex flex-col m-8 gap-2 bg-[#131313] text-whitesmoke ml-">
-      <div className="flex flex-col mx-6 my-9 gap-4">
+    <div className="flex flex-col m-8 gap-2 bg- text-whitesmoke ml- text-gray-50">
+      <div className="flex flex-col mx-6 my-9 gap-4 bg-black-90">
         <h1 className="text-xl">Number Base Converter</h1>
-        <p className="text-[#bdbdbd] text-base leading-5">
+        <p className="text-base leading-5">
           Enter a number in any field, and the other bases will be calculated
           automatically
         </p>

@@ -1,0 +1,59 @@
+#root, html{
+    background-color: #131313;
+    
+}
+
+
+.fas, .fa-times{
+    margin-bottom: -3px;
+}
+
+
+.heading{
+    font-size: 1.9rem;
+}
+
+.markdown-converter-page-content{
+    display:flex;
+    gap: 16px;
+
+}
+
+.input-section, .output-section{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    width: 30%;
+    padding: 15px;
+}
+
+.input-section{
+    width: 500px;   
+}
+
+.output-section{
+    gap: 17px;
+}
+
+textarea{
+    padding: 2rem;
+    height: 450px;
+    background-color: #303030;
+    cursor: pointer;
+    color: white;
+}
+
+.input-btns, .output-btns{
+    display: flex;
+    gap: 16px;
+}
+
+.markdown-output{
+    background-color: whitesmoke;
+    border: 2px solid white;
+    width: 500px;
+    height: 450px;
+    color: black
+}
+
+

@@ -103,7 +103,6 @@ function URLParser() {
                 <div className="flex flex-col md:flex-row flex-grow">
                     {/* Input Section */}
                     <div className="flex-grow p-4">
-                        
                         <div>
                             <div className="flex justify-between mb-3">
                                 <div className="flex gap-4">

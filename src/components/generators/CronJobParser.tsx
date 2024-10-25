@@ -3,6 +3,7 @@ import Star from "@/assets/icons/star.png";
 import DarkStar from "@/assets/icons/dark-star.png";
 import { InputCronJob } from "./InputCronJob";
 import { OutputCronJob } from "./OutputCronJob";
+import UpcomingCronJobs from "./UpcomingCrons";
 
 function CronJobParser() {
   const [inputValue, setInputValue] = useState("");
@@ -78,38 +79,7 @@ function CronJobParser() {
           </div>
         </div>
       </div>
-      <div className="mt-7 border-t px-5 pt-5">
-        <div className="flex items-center gap-5 font-medium">
-          <p>Next scheduled date:</p>
-        </div>
-        <div className="flex flex-col gap-5  mt-5 bg-[#1D1D1D] p-4">
-          <div className="flex items-center gap-52 text-sm font-medium">
-            <p>*</p>
-            <p>
-              Wildcard for "every" (e.g * in the minute field means every
-              minute)
-            </p>
-          </div>
-          <div className="flex items-center gap-52 text-sm font-medium">
-            <p>,</p>
-            <p>
-              Value list separator to specify multiple values (e.g 1, 15 in the
-              minute field means minute 1 and 15)
-            </p>
-          </div>
-          <div className="flex items-center gap-52 text-sm font-medium">
-            <p>-</p>
-            <p>Range of values (e.g 1-5 means from 1 to 5)</p>
-          </div>
-          <div className="flex items-center gap-52 text-sm font-medium">
-            <p>/</p>
-            <p>
-              Specifies increments (e.g */5 in the minute field means every 5
-              minutes)
-            </p>
-          </div>
-        </div>
-      </div>
+      <UpcomingCronJobs cronExpression={inputValue} />
     </div>
   );
 }

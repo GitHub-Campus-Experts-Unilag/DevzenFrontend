@@ -6,6 +6,7 @@ import SignIn from "../pages/auth/SignIn";
 import URLParser from "../pages/auth/url_parser";
 import { Feedback } from "../pages/Feedback";
 import { StringConverter } from "@/components/converters/StringConverter";
+import { HtmlPreview } from "@/components/converters/HtmlPreview";
 
 
 export const router = createBrowserRouter([
@@ -32,5 +33,9 @@ export const router = createBrowserRouter([
     {
         path: "/stringcase",
         element: <StringConverter />
+    },
+    {
+        path: "/htmlpreview",
+        element: <HtmlPreview />
     }
 ])

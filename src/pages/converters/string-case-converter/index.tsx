@@ -1,8 +1,9 @@
-import { Compress } from "../../assets/svg"
-import { InputStringConverter } from "./InputStringConverter"
-import { OutputStringConverter } from "./OutputStringConverter"
+import { Compress } from "@/assets/svg"
+import { InputStringConverter } from "@/components/converters/string-case-converter/InputStringConverter"
+import { OutputStringConverter } from "@/components/converters/string-case-converter/OutputStringConverter"
 import { useState } from "react"
-export const StringConverter = () => {
+
+const StringConverter = () => {
   const [inputValue,setinputValue] = useState('')
   const [outputValue,setOutputValue] = useState('')
   const [dropDown,setDropdown] = useState(false)
@@ -25,3 +26,5 @@ export const StringConverter = () => {
   </section>
   )
 }
+
+export default StringConverter;

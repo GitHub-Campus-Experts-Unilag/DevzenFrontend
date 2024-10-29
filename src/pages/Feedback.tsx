@@ -1,6 +1,6 @@
 import { Cancel } from "../assets/svg"
 
-export const Feedback = () => {
+const Feedback = () => {
   return (
     <section className="flex items-center justify-center h-scren bg-[#161616] py-[152px] tracking-tight px-4">
     <div className="modal text-[#D7D7D7] font-semibold text-xl w-[920px] h-[720px] rounded-[24px] bg-[#1C1C1C]  border border-[#393939]">
@@ -25,4 +25,6 @@ export const Feedback = () => {
     </section>
   )
 }
+
+export default Feedback;
 

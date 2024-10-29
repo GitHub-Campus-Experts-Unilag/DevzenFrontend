@@ -6,7 +6,7 @@ type OutputProps = {
     setDropdown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 import { useState } from "react"
-import {ArrowDown, Copy} from "../../assets/svg"
+import {ArrowDown, Copy} from "@/assets/svg"
 export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputValue,setOutputValue}:OutputProps) => {
     const [cases,setCase] = useState('camelCase')
     const handleCase=(e:any)=>{

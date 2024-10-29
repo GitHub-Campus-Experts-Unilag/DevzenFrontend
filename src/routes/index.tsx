@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "@/layout/layout";
 
 // import URLParser from "../pages/auth/url_parser";
-import { HtmlPreview } from "@/components/converters/HtmlPreview";
-// import Home from "@/pages/Home";
+import Home from "@/pages/Home";
 import SignIn from "@/pages/auth/SignIn";
 import Feedback from "@/pages/Feedback";
 
@@ -31,6 +30,10 @@ import HTMLPreview from "@/pages/generators/html-preview";
 
 export const router = createBrowserRouter([
 
+    {
+        path: "/",
+        element: <Home/>,
+    },
     {
         path: "/csv_to_json",
         element: <CSVToJSON/>,
@@ -101,10 +104,6 @@ export const router = createBrowserRouter([
                     {
                         path: "feedback",
                         element: <Feedback />
-                    },
-                    {
-                        path: "/htmlpreview",
-                        element: <HtmlPreview />
                     }
                 ]
             }, {

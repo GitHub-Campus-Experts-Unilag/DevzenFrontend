@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "@/layout/layout";
 
 // import URLParser from "../pages/auth/url_parser";
-import { StringConverter } from "@/components/converters/StringConverter";
 import { HtmlPreview } from "@/components/converters/HtmlPreview";
 // import Home from "@/pages/Home";
 import SignIn from "@/pages/auth/SignIn";
@@ -102,10 +101,6 @@ export const router = createBrowserRouter([
                     {
                         path: "feedback",
                         element: <Feedback />
-                    },
-                    {
-                        path: "/stringcase",
-                        element: <StringConverter />
                     },
                     {
                         path: "/htmlpreview",

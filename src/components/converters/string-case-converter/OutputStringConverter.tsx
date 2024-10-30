@@ -34,7 +34,7 @@ export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputVal
         
       }
   return (
-    <section className="w-[50%]">
+    <section className="sm:w-[50%]">
           <div className="flex items-center gap-4 mb-6">
             <p className="text-[#BDBDBD] font-semibold">Output:</p>
             <div className="flex items-center gap-x-2">
@@ -54,7 +54,7 @@ export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputVal
               <img src={Copy} alt="CopyButton" onClick={()=>navigator.clipboard.writeText(outputValue)}/>
             </div>
           </div>
-          <p className="h-screen overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{outputValue}</p>
+          <p className="sm:h-screen h-[50vh]  overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">{outputValue}</p>
         </section>
   )
 }

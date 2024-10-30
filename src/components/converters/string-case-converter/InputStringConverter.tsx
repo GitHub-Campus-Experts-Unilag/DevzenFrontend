@@ -15,12 +15,12 @@ export const InputStringConverter = ({inputValue,setInputValue,setOutputValue}: 
         setOutputValue('')
     }
   return (
-    <section className="w-[50%]">
+    <section className="sm:w-[50%] mb-4 sm:mb-0">
     <div className="flex items-center gap-4 mb-6 h-[28px]">
       <p className="text-[#BDBDBD] font-semibold">Input:</p>
       <img src={ClearInput} alt="ClearInput" onClick={clearInput} className={inputValue == ''? 'hidden': ''}/>
     </div>
-    <textarea value={inputValue} onChange={handleChange}  name="" id="" className="h-screen w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none"/>
+    <textarea value={inputValue} onChange={handleChange}  name="" id="" className="sm:h-screen h-[50vh] w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none"/>
   </section>
   )
 }

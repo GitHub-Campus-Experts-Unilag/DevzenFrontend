@@ -1,10 +1,8 @@
+import CSVToJSONComponent from "@/components/converters/csv-to-json/csvToJson";
+
 const CSVToJSON = () => {
 
-    return (
-        <div>
-            CSV to JSON
-        </div>
-    )
+    return <CSVToJSONComponent />
 }
 
 export default CSVToJSON;

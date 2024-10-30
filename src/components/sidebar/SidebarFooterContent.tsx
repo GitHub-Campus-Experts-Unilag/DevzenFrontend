@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/sidebar";
 
 
-import userAvatar from "../assets/images/avatar-1.png";
-import feedbackIcon from "../assets/icons/sms-edit.svg";
+import userAvatar from "@/assets/images/avatar-1.png";
+import feedbackIcon from "@/assets/icons/sms-edit.svg";
 
 const SidebarFooterContent = () => {
 

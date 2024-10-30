@@ -6,9 +6,9 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-import SidebarHeaderContent from "@/components/SidebarHeaderContent";
-import SidebarMainContent from "@/components/SidebarMainContent";
-import SidebarFooterContent from "@/components/SidebarFooterContent";
+import SidebarHeaderContent from "@/components/sidebar/SidebarHeaderContent";
+import SidebarMainContent from "@/components/sidebar/SidebarMainContent";
+import SidebarFooterContent from "@/components/sidebar/SidebarFooterContent";
 
 import editIcon from "../assets/icons/edit.svg";
 import formattersIcon from "../assets/icons/formatters.svg";

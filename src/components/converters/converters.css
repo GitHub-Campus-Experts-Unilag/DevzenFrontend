@@ -1,139 +1,69 @@
 #root, html{
-    background-color: #131313;
-    
+  background-color: #131313;
+  
 }
 
-
-.fas, .fa-times{
-    margin-bottom: -3px;
-}
-
-.title{
-  font-size: 2rem;
-}
-
-.heading{
-    font-size: 1.9rem;
-}
-
-.markdown-converter-page-content{
-    display:flex;
-    gap: 16px;
-
-}
-
-.input-section, .output-section{
-    display: flex;
-    flex-direction: column;
-    gap:24px;
-    width: 50%;
-    padding: 15px;
-    
-}
-
-.input-section{
-    width: 500px;   
-}
-
-.output-section{
-    gap: 17px;
-   
-}
-
-.textarea{
-    padding: 0.6rem;
-    height: 450px;
-    background-color: #303030;
-    cursor: pointer;
-    color: white;
-}
-
-.input-btns, .output-btns{
-    display: flex;
-    gap: 16px;
-}
-
-.markdown-output{
-    background-color: whitesmoke;
-    border: 2px solid white;
-    width: 500px;
-    height: 450px;
-    color: red;
-    max-height: 500px;
-    overflow-y: auto;
-}
-
+/*Markdown Styling*/
 
 .markdown-output ul {
-    list-style-type: disc; 
-    margin-left: 20px; 
-    color: #000; 
-  }
-  
-  .markdown-output ol {
-    list-style-type: decimal; 
-    margin-left: 20px; 
-    color: #000; 
-  }
-  
-  .markdown-output li {
-    color: #000; 
-  }
-
-  .markdown-output h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output h3 {
-    font-size: 1.17em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output h4 {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output h5 {
-    font-size: 0.83em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output h6 {
-    font-size: 0.67em;
-    font-weight: bold;
-    margin: 0.5em 0;
-  }
-  
-  .markdown-output a {
-    color: blue;
-    text-decoration: underline;
-    transition: color 0.3s;
-  }
-  
-  .markdown-output a:hover {
-    color: darkblue;
-    text-decoration: none;
-  }
-  
-
-
-.output-container{
-  padding: 0.6rem;
+  list-style-type: disc; 
+  margin-left: 20px; 
+  color: #000; 
 }
 
-.markdown-convert{
-  display: flex;
-  
+.markdown-output ol {
+  list-style-type: decimal; 
+  margin-left: 20px; 
+  color: #000; 
+}
+
+.markdown-output li {
+  color: #000; 
+}
+
+.markdown-output h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output h6 {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.markdown-output a {
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.markdown-output a:hover {
+  color: darkblue;
+  text-decoration: none;
 }

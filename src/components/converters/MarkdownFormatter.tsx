@@ -51,34 +51,34 @@ function MarkdownFormatter() {
   return (
     <div className="flex flex-col m-8 gap-2 bg- text-whitesmoke ml-8 text-gray-50">
       <div className="flex flex-col mx-6 my-9 gap-4 bg-black-90">
-        <h1 className="title">Markdown Formatter</h1>
+        <h1 className="text-[2rem]">Markdown Formatter</h1>
         <p className="text-base leading-5">
           Enter your unformatted Markdown text for clean and consistent formatting.
         </p>
       </div>
 
-      <div className="markdown-converter-page-content ml-2 markdown-converter">
-        <div className="input-section">
-          <div className="input-btns">
+      <div className="flex flex-col gap-4 w-full max-w-full ml-0 sm:ml-auto sm:gap-8 sm:flex-row markdown-converter-page-content">
+        <div className="input-section w-full  max-w-full flex flex-col gap-4 p-4 max-h-[500px] break-words sm:w-1/2 sm:bg-transparent sm:gap-[17px] sm:max-w-[500px] sm:gap-[24px]">
+          <div className="flex gap-4">
             <p>Input: </p>
             <ClearButton clear={clearMarkdownInput} />
           </div>
           <textarea
-            className="textarea"
+            className="p-2.5 h-[450px] bg-[#303030] cursor-pointer text-white"
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
             placeholder="Enter Markdown text here"
           />
         </div>
 
-        <div className="output-section">
-          <div className="output-btns">
+        <div className="output-section w-full max-w-full flex flex-col gap-4  p-4 max-h-[500px] break-words sm:w-1/2 sm:bg-transparent sm:gap-[17px] sm:max-w-[500px]">
+          <div className="flex gap-4">
             <p>Output: </p>
             <OpenInBrowserBtn htmlContent={htmlContent} />
             <CopyButton value={formattedMarkdown} outputRef={outputRef} />
           </div>
-          <div className="markdown-output" ref={outputRef}>
-            <ReactMarkdown
+          <div className="markdown-output bg-[#f5f5f5] border-2 border-white text-black overflow-y-auto overflow-x-hidden min-h-[420px] w-full max-w-full box-border break-words p-2" ref={outputRef}>
+            <ReactMarkdown className="react-markdown"
               children={formattedMarkdown}
               remarkPlugins={[remarkMath, remarkGfm]}
               rehypePlugins={[rehypeKatex, rehypeRaw]}
@@ -91,7 +91,7 @@ function MarkdownFormatter() {
                   </blockquote>
                 ),
               }}
-              className="output-container"
+            
             />
           </div>
         </div>

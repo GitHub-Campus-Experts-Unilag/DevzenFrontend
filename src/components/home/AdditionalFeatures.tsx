@@ -1,5 +1,5 @@
-import numberBaseConverterGif from "../../assets/gifs/number-base-converter.gif";
-import csvToJsonGif from "../../assets/gifs/csv-to-json.gif";
+import numberBaseConverterGif from "@/assets/gifs/number-base-converter.gif";
+import csvToJsonGif from "@/assets/gifs/csv-to-json.gif";
 
 const AdditionalFeatures = () => {
     return (

@@ -7,9 +7,9 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import avatar1 from "../../assets/images/avatar-1.png";
-import avatar2 from "../../assets/images/avatar-2.png";
-import avatar3 from "../../assets/images/avatar-3.png";
+import avatar1 from "@/assets/images/avatar-1.png";
+import avatar2 from "@/assets/images/avatar-2.png";
+import avatar3 from "@/assets/images/avatar-3.png";
 
 const Testimonials = () => {
     return (

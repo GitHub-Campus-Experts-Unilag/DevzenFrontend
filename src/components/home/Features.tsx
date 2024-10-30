@@ -7,17 +7,17 @@ import {
     AccordionTrigger
 } from "@/components/ui/feature-accordion";
 
-import formattersIcon from "../../assets/icons/formatters.svg";
-import convertersIcon from "../../assets/icons/converters.svg";
-import generatorsIcon from "../../assets/icons/generators.svg";
-import collaborationIcon from "../../assets/icons/collaboration.svg";
-import zenboardIcon from "../../assets/icons/zenboard.svg";
+import formattersIcon from "@/assets/icons/formatters.svg";
+import convertersIcon from "@/assets/icons/converters.svg";
+import generatorsIcon from "@/assets/icons/generators.svg";
+import collaborationIcon from "@/assets/icons/collaboration.svg";
+import zenboardIcon from "@/assets/icons/zenboard.svg";
 
-import formattersGif from "../../assets/gifs/formatters.gif";
-import convertersGif from "../../assets/gifs/converters.gif";
-import generatorsGif from "../../assets/gifs/generators.gif";
-import collaborationGif from "../../assets/gifs/collaboration.gif";
-import zenboardGif from "../../assets/gifs/zenboard.gif";
+import formattersGif from "@/assets/gifs/formatters.gif";
+import convertersGif from "@/assets/gifs/converters.gif";
+import generatorsGif from "@/assets/gifs/generators.gif";
+import collaborationGif from "@/assets/gifs/collaboration.gif";
+import zenboardGif from "@/assets/gifs/zenboard.gif";
 
 const nameToImgSrc: Record<string, string> = {
     "formatters": formattersGif,

@@ -8,6 +8,9 @@
     margin-bottom: -3px;
 }
 
+.title{
+  font-size: 2rem;
+}
 
 .heading{
     font-size: 1.9rem;
@@ -23,8 +26,9 @@
     display: flex;
     flex-direction: column;
     gap:24px;
-    width: 30%;
+    width: 50%;
     padding: 15px;
+    
 }
 
 .input-section{
@@ -35,8 +39,8 @@
     gap: 17px;
 }
 
-textarea{
-    padding: 2rem;
+.textarea{
+    padding: 0.6rem;
     height: 450px;
     background-color: #303030;
     cursor: pointer;
@@ -109,6 +113,24 @@ textarea{
     margin: 0.5em 0;
   }
   
+  .markdown-output a {
+    color: blue;
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  
+  .markdown-output a:hover {
+    color: darkblue;
+    text-decoration: none;
+  }
   
 
 
+.output-container{
+  padding: 0.6rem;
+}
+
+.markdown-convert{
+  display: flex;
+  
+}

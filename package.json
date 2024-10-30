@@ -33,7 +33,11 @@
     "react-hook-form": "^7.53.0",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.26.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-footnotes": "^4.0.1",
     "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"

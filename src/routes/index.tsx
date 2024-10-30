@@ -26,111 +26,111 @@ import RegExpTester from "@/pages/generators/regexp-tester";
 import CronJobParser from "@/pages/generators/cron-job-parser";
 import HTMLPreview from "@/pages/generators/html-preview";
 
-
 export const router = createBrowserRouter([
-
-    {
-        path: "/csv_to_json",
-        element: <CsvToJson/>,
-    },
-    {
-        path: "/dashboard",
-        element: <DashboardLayout />,
+  // {
+  //     path: "/csv_to_json",
+  //     element: <CsvToJson/>,
+  // },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "quick-sketch",
         children: [
-            {
-                path: "quick-sketch",
-                children: [
-                    {
-                        index: true,
-                        element: <Zenboard />
-                    },
-                    {
-                        path: "zenboard",
-                        element: <Zenboard />
-                    }
-                ]
-            }, {
-                path: "formatters",
-                children: [
-                    {
-                        index: true,
-                        element: <JSONFormatter />
-                    },
-                    {
-                        path: "json",
-                        element: <JSONFormatter />
-                    },
-                    {
-                        path: "sql",
-                        element: <SQLFormatter />
-                    },
-                    {
-                        path: "markdown",
-                        element: <MarkdownFormatter />
-                    }
-                ]
-            }, {
-                path: "converters",
-                children: [
-                    {
-                        index: true,
-                        element: <URLParser />
-                    },
-                    {
-                        path: "url-parser",
-                        element: <URLParser />
-                    },
-                    {
-                        path: "number-base-converter",
-                        element: <NumberBaseConverter />
-                    },
-                    {
-                        path: "string-case-converter",
-                        element: <StringCaseConverter />
-                    },
-                    {
-                        path: "gostruct-to-typescript-interfaces",
-                        element: <GostructToTypescriptInterfaces />
-                    },
-                    {
-                        path: "csv-to-json",
-                        element: <CSVToJSON />
-                    },
-                ]
-            }, {
-                path: "generators",
-                children: [
-                    {
-                        index: true,
-                        element: <JWTDebugger />
-                    },
-                    {
-                        path: "jwt-debugger",
-                        element: <JWTDebugger />
-                    },
-                    {
-                        path: "regexp-tester",
-                        element: <RegExpTester />
-                    },
-                    {
-                        path: "cron-job-parser",
-                        element: <CronJobParser />
-                    },
-                    {
-                        path: "html-preview",
-                        element: <HTMLPreview />
-                    },
-                ]
-            }
-        ]
-
-    },
-    {
-        path: "login",
-        element: <SignIn />,
-    },
-    {
-        path: "feedback",
-        element: <Feedback />
-    }
-])
+          {
+            index: true,
+            element: <Zenboard />,
+          },
+          {
+            path: "zenboard",
+            element: <Zenboard />,
+          },
+        ],
+      },
+      {
+        path: "formatters",
+        children: [
+          {
+            index: true,
+            element: <JSONFormatter />,
+          },
+          {
+            path: "json",
+            element: <JSONFormatter />,
+          },
+          {
+            path: "sql",
+            element: <SQLFormatter />,
+          },
+          {
+            path: "markdown",
+            element: <MarkdownFormatter />,
+          },
+        ],
+      },
+      {
+        path: "converters",
+        children: [
+          {
+            index: true,
+            element: <URLParser />,
+          },
+          {
+            path: "url-parser",
+            element: <URLParser />,
+          },
+          {
+            path: "number-base-converter",
+            element: <NumberBaseConverter />,
+          },
+          {
+            path: "string-case-converter",
+            element: <StringCaseConverter />,
+          },
+          {
+            path: "gostruct-to-typescript-interfaces",
+            element: <GostructToTypescriptInterfaces />,
+          },
+          {
+            path: "csv-to-json",
+            element: <CSVToJSON />,
+          },
+        ],
+      },
+      {
+        path: "generators",
+        children: [
+          {
+            index: true,
+            element: <JWTDebugger />,
+          },
+          {
+            path: "jwt-debugger",
+            element: <JWTDebugger />,
+          },
+          {
+            path: "regexp-tester",
+            element: <RegExpTester />,
+          },
+          {
+            path: "cron-job-parser",
+            element: <CronJobParser />,
+          },
+          {
+            path: "html-preview",
+            element: <HTMLPreview />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "login",
+    element: <SignIn />,
+  },
+  {
+    path: "feedback",
+    element: <Feedback />,
+  },
+]);

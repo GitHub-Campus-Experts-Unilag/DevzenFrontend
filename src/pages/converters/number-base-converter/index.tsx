@@ -3,6 +3,8 @@ import "@/components/converters/number-base-converter/NumberBaseConverter.css";
 import ClearButton from "@/components/converters/number-base-converter/ClearButton";
 import CopyButton from "@/components/converters/number-base-converter/CopyButton";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 function NumberBaseConverter() {
   const [binary, setBinary] = useState("");
   const [octal, setOctal] = useState("");
@@ -150,119 +152,127 @@ function NumberBaseConverter() {
   };
 
   return (
-    <div className="flex flex-col m-8 gap-2 bg-[#131313] text-whitesmoke ml-">
-      <div className="flex flex-col mx-6 my-9 gap-4">
-        <h1 className="text-xl">Number Base Converter</h1>
-        <p className="text-[#bdbdbd] text-base leading-5">
-          Enter a number in any field, and the other bases will be calculated
-          automatically
+    <div className="flex flex-col gap-2 bg-[#131313] text-whitesmoke ml-">
+      <header className="flex flex-col m-6 ml-8 gap-4">
+        <h1 className="text-[1.75rem] text-black-10 font-bold">Number Base Converter</h1>
+        <p className="text-black-20 text-base leading-5">
+          Enter a number in any field, and the other bases will be calculated automatically.
         </p>
-      </div>
+      </header>
 
-      <div className="ml-5">
-        <div className="my-4">
-          <div className="mb-4 flex gap-2 items-center self-center">
-            <label htmlFor="">Binary(Base2): </label>
-            <ClearButton clear={clearBinary} />
-          </div>
-          <div className="flex gap-1.5">
-            <input
-              type="text"
-              onChange={handleBinaryChange}
-              value={binary}
-              className="border-2 border-black bg-[#303030] text-white w-4/5 p-[3px]"
-            />
-            <CopyButton value={binary} />
-          </div>
-          {binaryError && <p className="text-red-600 text-base">{binaryError}</p>}
-        </div>
-        <div className="w-9/10 bg-[#303030] h-px divider"></div>
-
-
-
-        <div className="my-4">
-          <div className="mb-4 flex gap-2 items-center self-center">
-            <label htmlFor="">Octal(Base 8): </label>
-            <ClearButton clear={clearOctal} />
-          </div>
-          <div className="flex gap-1.5">
-            <input
-              type="text"
-              onChange={handleOctalChange}
-              value={octal}
-              className="border-2 border-black bg-[#303030] text-white w-4/5 p-[3px]"
-            />
-            <CopyButton value={octal} />
-          </div>
-          {octalError && <p className="text-red-600 text-base">{octalError}</p>}
-        </div>
-        <div className="w-9/10 bg-[#303030] h-px"></div>
-
-        <div className="my-4">
-          <div className="mb-4 flex gap-2 items-center self-center">
-            <label htmlFor="">Decimal (Base 10)</label>
-            <ClearButton clear={clearDecimal} />
-          </div>
-          <div className="flex gap-1.5">
-            <input
-              type="text"
-              onChange={handleDecimalChange}
-              value={decimal}
-              className="border-2 border-black bg-[#303030] text-white w-4/5 p-[3px]"
-            />
-            <CopyButton value={decimal} />
-          </div>
-          {decimalError && <p className="text-red-600 text-base">{decimalError}</p>}
-        </div>
-        <div className="w-9/10 bg-[#303030] h-px"></div>
-
-        <div className="my-4">
-          <div className="mb-4 flex gap-2 items-center self-center">
-            <label htmlFor="">Hexadecimal (Base 16): </label>
-            <ClearButton clear={clearHex} />
-          </div>
-          <div className="flex gap-1.5">
-            <input
-              type="text"
-              onChange={handleHexadecimalChange}
-              value={hexadecimal}
-              className="border-2 border-black bg-[#303030] text-white w-4/5 p-[3px]"
-            />
-            <CopyButton value={hexadecimal} />
-          </div>
-          {hexadecimalError && <p className="text-red-600 text-base">{hexadecimalError}</p>}
-        </div>
-        <div className="w-9/10 bg-[#303030] h-px"></div>
-
-        <div className="my-4">
-          <div className="mb-4 flex gap-2 items-center self-center">
-            <label htmlFor="">Select base: </label>
-            <div className="bg-[#303030] text-xs py-1 px-2 rounded flex items-center justify-between gap-2">
-              <button onClick={decreaseBase} className="bg-[#545353] rounded-[3px] w-[18px] h-[18px] flex items-center justify-center border border-[#6a6a6a]">
-                &lt;
-              </button>
-              <span> {selectedBase} </span>
-              <button onClick={increaseBase} className="bg-[#545353] rounded-[3px] w-[18px] h-[18px] flex items-center justify-center border border-[#6a6a6a]">
-                &gt;
-              </button>
+      <main className="mb-6">
+          <div className="py-6 pl-8 border-b-2 border-black-80">
+            <div className="mb-4 flex gap-2 items-center self-center">
+              <label
+                htmlFor="binary-input"
+                className="text-black-20 font-semibold text-[1.0625rem] mr-2"
+              >Binary (Base 2):</label>
+              <ClearButton clear={clearBinary} />
             </div>
-            <ClearButton clear={clearSelectedBaseInput} />
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <input
+                id="binary-input"
+                type="text"
+                onChange={handleBinaryChange}
+                value={binary}
+                className="font-medium border-b-2 border-black-60 bg-black-80 text-black-10 rounded-sm w-4/5 p-3"
+              />
+              <CopyButton value={binary} />
+            </div>
+            {binaryError && <p className="text-red-600 text-base">{binaryError}</p>}
           </div>
-          <div className="flex gap-1.5">
-            <input
-              type="text"
-              onChange={handleSelectedBaseInputChange}
-              value={selectedBaseInput}
-              className="border-2 border-black bg-[#303030] text-white w-4/5 p-[3px]"
-            />
-            <CopyButton value={selectedBaseInput} />
+          <div className="py-6 pl-8 border-b-2 border-black-80">
+            <div className="mb-4 flex gap-2 items-center self-center">
+              <label
+                htmlFor="octal-input"
+                className="text-black-20 font-semibold text-[1.0625rem] mr-2"
+              >Octal (Base 8):</label>
+              <ClearButton clear={clearOctal} />
+            </div>
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <input
+                id="octal-input"
+                type="text"
+                onChange={handleOctalChange}
+                value={octal}
+                className="font-medium border-b-2 border-black-60 bg-black-80 text-black-10 rounded-sm w-4/5 p-3"
+              />
+              <CopyButton value={octal} />
+            </div>
+            {octalError && <p className="text-red-600 text-base">{octalError}</p>}
           </div>
-          {selectedBaseInputError && (
-            <p className="text-red-600 text-base">{selectedBaseInputError}</p>
-          )}
-        </div>
-        <div className="w-9/10 bg-[#303030] h-px"></div>
-      </div>
+          <div className="py-6 pl-8 border-b-2 border-black-80">
+            <div className="mb-4 flex gap-2 items-center self-center">
+              <label
+                htmlFor="decimal-input"
+                className="text-black-20 font-semibold text-[1.0625rem] mr-2"
+              >Decimal (Base 10):</label>
+              <ClearButton clear={clearDecimal} />
+            </div>
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <input
+                id="decimal-input"
+                type="text"
+                onChange={handleDecimalChange}
+                value={decimal}
+                className="font-medium border-b-2 border-black-60 bg-black-80 text-black-10 rounded-sm w-4/5 p-3"
+              />
+              <CopyButton value={decimal} />
+            </div>
+            {decimalError && <p className="text-red-600 text-base">{decimalError}</p>}
+          </div>
+          <div className="py-6 pl-8 border-b-2 border-black-80">
+            <div className="mb-4 flex gap-2 items-center self-center">
+              <label
+                htmlFor="hexadecimal-input"
+                className="text-black-20 font-semibold text-[1.0625rem] mr-2"
+              >Hexadecimal (Base 16):</label>
+              <ClearButton clear={clearHex} />
+            </div>
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <input
+                id="hexadecimal-input"
+                type="text"
+                onChange={handleHexadecimalChange}
+                value={hexadecimal}
+                className="font-medium border-b-2 border-black-60 bg-black-80 text-black-10 rounded-sm w-4/5 p-3"
+              />
+              <CopyButton value={hexadecimal} />
+            </div>
+            {hexadecimalError && <p className="text-red-600 text-base">{hexadecimalError}</p>}
+          </div>
+          <div className="py-6 pl-8 border-b-2 border-black-80">
+            <div className="text-black-20 mb-4 flex gap-2 items-center self-center">
+              <label
+                htmlFor="custom-base-input"
+                className="text-black-20 font-semibold text-[1.0625rem] mr-2"
+              >Select base:</label>
+              <div className="bg-[#303030] text-xs py-1 px-2 rounded flex items-center justify-between gap-2">
+                <button onClick={decreaseBase}>
+                  <ChevronLeft className="text-black-10 bg-black-50 w-4 rounded-sm" />
+                </button>
+                <span className="font-medium text-[0.8125rem]"> {selectedBase} </span>
+                <button onClick={increaseBase}>
+                  <ChevronRight className="text-black-10 bg-black-50 w-4 rounded-sm" />
+                </button>
+              </div>
+              <ClearButton clear={clearSelectedBaseInput} />
+            </div>
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <input
+                id="custom-base-input"
+                type="text"
+                onChange={handleSelectedBaseInputChange}
+                value={selectedBaseInput}
+                className="font-medium border-b-2 border-black-60 bg-black-80 text-black-10 rounded-sm w-4/5 p-3"
+              />
+              <CopyButton value={selectedBaseInput} />
+            </div>
+            {selectedBaseInputError && (
+              <p className="text-red-600 text-base">{selectedBaseInputError}</p>
+            )}
+          </div>
+      </main>
     </div>
   );
 }

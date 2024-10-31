@@ -1,8 +1,8 @@
-import formattersIcon from "../../assets/icons/formatters.svg";
-import collaborationIcon from "../../assets/icons/collaboration.svg";
-import generatorsIcon from "../../assets/icons/generators.svg";
-import zenboardIcon from "../../assets/icons/zenboard.svg";
-import convertersIcon from "../../assets/icons/converters.svg";
+import formattersIcon from "@/assets/icons/formatters.svg";
+import collaborationIcon from "@/assets/icons/collaboration.svg";
+import generatorsIcon from "@/assets/icons/generators.svg";
+import zenboardIcon from "@/assets/icons/zenboard.svg";
+import convertersIcon from "@/assets/icons/converters.svg";
 
 const Hero = () => {
     return (

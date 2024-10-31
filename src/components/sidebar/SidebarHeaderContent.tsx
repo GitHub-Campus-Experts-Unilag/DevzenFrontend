@@ -10,7 +10,7 @@ import {
 
 import { Label } from "@/components/ui/label";
 
-import logo from "../assets/images/logo.svg";
+import logo from "@/assets/images/logo.svg";
 
 const SidebarHeaderContent = () => {
 

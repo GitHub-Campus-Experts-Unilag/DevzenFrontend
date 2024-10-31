@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Papa from 'papaparse';
 import YAML from 'yaml';
-import Icon from '../../assets/grid-4.svg'
-import CloseIcon from '../../assets/close.svg';
-import CopyIcon from "../../assets/copy.svg";
+import Icon from '@/assets/grid-4.svg'
+import CloseIcon from '@/assets/close.svg';
+import CopyIcon from "@/assets/copy.svg";
 
 const CsvTextUpload: React.FC = () => {
     const [data, setData] = useState<any[]>([]);
@@ -44,7 +44,7 @@ const CsvTextUpload: React.FC = () => {
                 try {
                     const parsedData = JSON.parse(inputData);
                     setData(parsedData);
-                } catch (error) {
+                } catch {
                     alert('Invalid JSON format.');
                 }
                 break;
@@ -53,7 +53,7 @@ const CsvTextUpload: React.FC = () => {
                 try {
                     const parsedData = YAML.parse(inputData);
                     setData(parsedData);
-                } catch (error) {
+                } catch {
                     alert('Invalid YAML format.');
                 }
                 break;
@@ -113,7 +113,7 @@ const CsvTextUpload: React.FC = () => {
     return (
         <div className="bg-[#131313] min-h-screen text-[#BDBDBD] flex flex-col">
             {/* HEADER */}
-            <div className="flex justify-between items-center p-4">
+            <header className="flex justify-between items-center p-4">
                 <div>
                     <h1 className="text-2xl text-[#D7D7D7] mb-1">CSV to JSON</h1>
                     <p className="text-sm">Enter a piece of code to convert it</p>
@@ -124,10 +124,10 @@ const CsvTextUpload: React.FC = () => {
                     className="ml-auto cursor-pointer hidden lg:inline-block"
                     onClick={toggleFields}
                 />
-            </div>
+            </header>
 
             {/* Main Content */}
-            <div className="flex flex-col md:flex-row flex-grow">
+            <main className="flex flex-col md:flex-row flex-grow">
                 {/* Input Section */}
                 <div className="flex-grow p-4 md:w-1/2">
                     <div>
@@ -181,7 +181,7 @@ const CsvTextUpload: React.FC = () => {
                         </div>
                     </div>
                 )}
-            </div>
+            </main>
         </div>
     );
 };

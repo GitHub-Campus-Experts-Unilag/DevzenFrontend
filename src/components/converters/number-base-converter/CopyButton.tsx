@@ -1,4 +1,4 @@
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { Copy } from 'lucide-react';
 import { useState } from "react";
 
 function CopyButton({value}: {value: string}) {
@@ -18,9 +18,9 @@ function CopyButton({value}: {value: string}) {
         }
     }
     return(
-        <button className="bg-[#303030] text-xs py-1 px-2 rounded flex items-center self-center gap-1" onClick={() => copyToClipboard()}>
+        <button className="bg-black-60 text-black-20 text-xs py-1 px-2 rounded flex gap-1" onClick={() => copyToClipboard()}>
             {copied? "Copied" : "Copy"} 
-            {!copied && <ContentCopyIcon className='copy-icon'/>}
+            {!copied && <Copy className="w-4 h-4 ml-0.5" />}
         </button>
     )
 }

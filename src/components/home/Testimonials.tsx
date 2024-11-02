@@ -7,9 +7,9 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import avatar1 from "../../assets/images/avatar-1.png";
-import avatar2 from "../../assets/images/avatar-2.png";
-import avatar3 from "../../assets/images/avatar-3.png";
+import avatar1 from "@/assets/images/avatar-1.png";
+import avatar2 from "@/assets/images/avatar-2.png";
+import avatar3 from "@/assets/images/avatar-3.png";
 
 const Testimonials = () => {
     return (
@@ -18,7 +18,7 @@ const Testimonials = () => {
             className="flex flex-col items-center mb-96"
         >
             <header className="text-center">
-                <h2 className="text-gray-10 font-bold text-[3.5rem] mb-2">What Developers Are Saying</h2>
+                <h2 className="text-gray-10 font-bold text-[clamp(1.5rem,calc(1.5rem+2vw),3.5rem)] mb-2">What Developers Are Saying</h2>
                 <p className="text-gray-30 text-[1.375rem] mb-24 max-w-[849px] mx-auto">See how DevZen is transforming workflows and boosting productivity for developers worldwide.</p>
             </header>
 

@@ -1,81 +1,119 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
-import { Logo } from "@/assets/svg"
-import { Input } from "@/components/ui/input"
-
 import {
   Sidebar,
   SidebarContent,
-  SidebarInput,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarTrigger
-} from "@/components/ui/sidebar"
+  SidebarRail,
+} from "@/components/ui/sidebar";
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
+import SidebarHeaderContent from "@/components/sidebar/SidebarHeaderContent";
+import SidebarMainContent from "@/components/sidebar/SidebarMainContent";
+import SidebarFooterContent from "@/components/sidebar/SidebarFooterContent";
 
-export function AppSidebar() {
+import editIcon from "../assets/icons/edit.svg";
+import formattersIcon from "../assets/icons/formatters.svg";
+import convertersIcon from "../assets/icons/converters.svg";
+import generatorsIcon from "../assets/icons/generators.svg";
+
+// This is sample data.
+const data = [
+  {
+    title: "Quick Sketch",
+    url: "quick-sketch",
+    imgSrc: editIcon,
+    isActive: true,
+    items: [
+      {
+        title: "Zenboard",
+        url: "zenboard",
+      }
+    ],
+  },
+  {
+    title: "Formatters",
+    url: "formatters",
+    imgSrc: formattersIcon,
+    isActive: true,
+    items: [
+      {
+        title: "JSON Format/ Validate",
+        url: "json",
+      },
+      {
+        title: "SQL Formatter",
+        url: "sql",
+      },
+      {
+        title: "Markdown Formatter",
+        url: "markdown",
+      },
+    ],
+  },
+  {
+    title: "Converters",
+    url: "converters",
+    imgSrc: convertersIcon,
+    items: [
+      {
+        title: "URL Parser",
+        url: "url-parser",
+      },
+      {
+        title: "Number Base Converter",
+        url: "number-base-converter",
+      },
+      {
+        title: "String Case Converter",
+        url: "string-case-converter",
+      },
+      {
+        title: "Gostruct to Typescript Interfaces",
+        url: "gostruct-to-typescript-interfaces",
+      },
+      {
+        title: "CSV to JSON",
+        url: "csv-to-json",
+      },
+    ],
+  },
+  {
+    title: "Generators",
+    url: "generators",
+    imgSrc: generatorsIcon,
+    items: [
+      {
+        title: "JWT Debugger",
+        url: "jwt-debugger",
+      },
+      {
+        title: "RegExp Tester",
+        url: "regexp-tester",
+      },
+      {
+        title: "Cron Job Parser",
+        url: "cron-job-parser",
+      },
+      {
+        title: "HTML Preview",
+        url: "html-preview",
+      },
+    ],
+  },
+];
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="p-6 bg-[#131313] gap-y-2">
-      <SidebarHeader className="flex flex-row justify-between">
-        <img src={Logo} alt="Build Logo" width={40} height={40}/>
-        <SidebarTrigger/>
+    <Sidebar collapsible="icon" {...props}>
+      <SidebarHeader>
+        <SidebarHeaderContent />
       </SidebarHeader>
-
       <SidebarContent>
-        <SidebarInput/>
-        {/* <Input type="text" placeholder="search...." className="outline-0 bg-[#303030]"/> */}
-        {/* <SidebarGroup>
-         <SidebarGroupLabel/>
-            <SidebarGroupContent>
-                <SidebarMenu>
-                {items.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                        </a>
-                    </SidebarMenuButton>
-                    </SidebarMenuItem>
-                ))}
-                </SidebarMenu>
-            </SidebarGroupContent>
-        </SidebarGroup> */}
+        <SidebarMainContent items={data} />
       </SidebarContent>
-      {/* <SidebarFooter /> */}
+      <SidebarFooter>
+        <SidebarFooterContent />
+      </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   )
 }

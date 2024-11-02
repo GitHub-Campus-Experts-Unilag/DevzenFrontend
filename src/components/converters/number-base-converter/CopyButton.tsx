@@ -1,4 +1,5 @@
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+
+import { Copy } from 'lucide-react';
 import { useState } from "react";
 
 interface CopyButtonProps {
@@ -91,7 +92,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ outputRef, value }) => {
       onClick={copyToClipboard}
     >
       {copied ? "Copied" : "Copy"}
-      {!copied && <ContentCopyIcon className="copy-icon" />}
+      {!copied && <Copy className="w-4 h-4 ml-0.5" />}
     </button>
   );
 };

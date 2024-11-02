@@ -1,6 +1,6 @@
-import "./converters.css";
-import ClearButton from "./ClearButton";
-import CopyButton from "./CopyButton";
+import "../converters.css";
+import ClearButton from "../number-base-converter/ClearButton";
+import CopyButton from "../number-base-converter/CopyButton";
 import OpenInBrowserBtn from "./OpenInBrowserBtn";
 import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";

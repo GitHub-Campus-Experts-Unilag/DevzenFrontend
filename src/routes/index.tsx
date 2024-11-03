@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import DashboardLayout from "@/layout/layout";
 
@@ -40,8 +40,8 @@ export const router = createBrowserRouter([
         path: "quick-sketch",
         children: [
           {
-            index: true,
-            element: <Zenboard />,
+            path: "",
+            element: <Navigate to="zenboard" />,
           },
           {
             path: "zenboard",
@@ -53,8 +53,8 @@ export const router = createBrowserRouter([
         path: "formatters",
         children: [
           {
-            index: true,
-            element: <JSONFormatter />,
+            path: "",
+            element: <Navigate to="json" />,
           },
           {
             path: "json",
@@ -74,8 +74,8 @@ export const router = createBrowserRouter([
         path: "converters",
         children: [
           {
-            index: true,
-            element: <URLParser />,
+            path: "",
+            element: <Navigate to="url-parser" />,
           },
           {
             path: "url-parser",
@@ -103,8 +103,8 @@ export const router = createBrowserRouter([
         path: "generators",
         children: [
           {
-            index: true,
-            element: <JWTDebugger />,
+            path: "",
+            element: <Navigate to="jwt-debugger" />,
           },
           {
             path: "jwt-debugger",

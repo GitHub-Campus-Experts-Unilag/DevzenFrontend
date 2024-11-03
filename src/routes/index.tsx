@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import DashboardLayout from "@/layout/layout";
 
-// import URLParser from "../pages/auth/url_parser";
 import Home from "@/pages/Home";
 import SignIn from "@/pages/auth/SignIn";
 import Feedback from "@/pages/Feedback";

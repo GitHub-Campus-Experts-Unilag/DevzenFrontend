@@ -3,7 +3,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
 } from "@/components/ui/sidebar";
 
 import SidebarHeaderContent from "@/components/sidebar/SidebarHeaderContent";
@@ -113,7 +112,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter>
         <SidebarFooterContent />
       </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
   )
 }

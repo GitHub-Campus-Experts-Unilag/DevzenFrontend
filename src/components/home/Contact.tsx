@@ -55,7 +55,7 @@ const Contact = () => {
             className="my-40"
         >
             <header className="text-center">
-                <h2 className="text-gray-10 font-bold text-[3.5rem]">Contact us</h2>
+                <h2 className="text-gray-10 font-bold text-[clamp(1.5rem,calc(1.5rem+2vw),3.5rem)]">Contact us</h2>
                 <p className="text-gray-30 text-[1.375rem] mb-24">Need any feature improved on or included? Send us an email.</p>
             </header>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                                         <Input
                                             type="email"
                                             placeholder="Enter email"
-                                            className="text-black-50 text-base font-medium border border-black-60 py-6 pl-3 pr-[0.625rem] rounded-lg"
+                                            className="text-gray-60 placeholder:text-black-50 text-base font-medium border border-black-60 py-6 pl-3 pr-[0.625rem] rounded-lg"
                                             {...field}
                                         />
                                     </FormControl>
@@ -91,7 +91,7 @@ const Contact = () => {
                                         <Textarea
                                             placeholder="Tell us a little bit about yourself"
                                             rows={8}
-                                            className="resize-none text-black-50 text-base font-medium border border-black-60 py-6 pl-3 pr-[0.625rem] rounded-lg"
+                                            className="resize-none text-gray-60 placeholder:text-black-50 text-base font-medium border border-black-60 py-6 pl-3 pr-[0.625rem] rounded-lg"
                                             {...field}
                                         />
                                     </FormControl>

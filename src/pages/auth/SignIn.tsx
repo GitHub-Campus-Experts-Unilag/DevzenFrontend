@@ -87,6 +87,8 @@ import convertersIcon from "../../assets/icons/converters.svg";
 import blurImg from "../../assets/images/blur.png";
 
 export const AuthPage = () => {
+
+const AuthPage = () => {
   return (
     <main className="relative bg-black-90 py-12 min-h-screen overflow-x-hidden flex">
       <section
@@ -192,5 +194,4 @@ export const AuthPage = () => {
     </main>
   )
 }
-
 //export default AuthPage;

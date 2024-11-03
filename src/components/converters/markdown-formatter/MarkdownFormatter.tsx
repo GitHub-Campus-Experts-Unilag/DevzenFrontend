@@ -1,7 +1,7 @@
-import "../../../components/converters/converters.css";
-import ClearButton from "../../../components/converters/number-base-converter/ClearButton";
-import CopyButton from "../../../components/converters/number-base-converter/CopyButton";
-import OpenInBrowserBtn from "../../../components/converters/markdown-formatter/OpenInBrowserBtn";
+import "../converters.css";
+import ClearButton from "../number-base-converter/ClearButton";
+import CopyButton from "../number-base-converter/CopyButton";
+import OpenInBrowserBtn from "./OpenInBrowserBtn";
 import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";

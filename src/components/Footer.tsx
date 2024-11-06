@@ -101,25 +101,33 @@ const Footer = () => {
                         <ul className="flex flex-col items-center gap-2 md:items-start">
                             <li>
                                 <a
-                                    href="#"
+                                    href="https://github.com/Github-Campus-Experts-Unilag"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[1.0625rem] text-black-20 hover:text-black-10 transition-all duration-300"
                                 >Github</a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="https://x.com/GCEUnilag"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[1.0625rem] text-black-20 hover:text-black-10 transition-all duration-300"
                                 >Twitter</a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="https://www.linkedin.com/company/gce-unilag"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[1.0625rem] text-black-20 hover:text-black-10 transition-all duration-300"
                                 >LinkedIn</a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="https://www.youtube.com/@gceunilag"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-[1.0625rem] text-black-20 hover:text-black-10 transition-all duration-300"
                                 >Youtube</a>
                             </li>

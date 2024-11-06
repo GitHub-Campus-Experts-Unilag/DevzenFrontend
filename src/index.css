@@ -165,16 +165,23 @@
 }
 
 @layer base {
+    
   * {
-    @apply border-border;
+        @apply border-border;
+
+        scrollbar-width: thin;
+        scrollbar-color: #5a5a5a #121212;
     }
+    
     html {
         @apply scroll-smooth scroll-pt-24;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
+
     abbr {
-    @apply no-underline;
+        @apply no-underline;
     }
 }

@@ -1,4 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+
+import Home from "../pages/Home";
+import Layout from "@/layout/layout";
+import {SignUp,AuthPage} from "../pages/auth/SignIn";
 import DashboardLayout from "@/layout/layout";
 
 // import URLParser from "../pages/auth/url_parser";
@@ -30,6 +34,19 @@ import HTMLPreview from "@/pages/generators/html-preview";
 export const router = createBrowserRouter([
   {
         path: "/",
+
+        element: <Home />,
+    },
+    {
+        path: "/login",
+        element: <SignUp />,
+    },
+    {
+        path: "/feedback",
+        element: <Feedback />
+    }
+])
+
         element: <Home/>,
   },
   {

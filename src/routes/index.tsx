@@ -29,21 +29,17 @@ import HTMLPreview from "@/pages/generators/html-preview";
 
 export const router = createBrowserRouter([
   {
-        path: "/",
+    path: "/",
 
-        element: <Home />,
-    },
-    {
-        path: "/login",
-        element: <SignUp />,
-    },
-    {
-        path: "/feedback",
-        element: <Feedback />
-    }
-])
-
-        element: <Home/>,
+    element: <Home />,
+  },
+  {
+    path: "login",
+    element: <SignIn />,
+  },
+  {
+    path: "feedback",
+    element: <Feedback />,
   },
   {
     path: "/dashboard",
@@ -138,13 +134,5 @@ export const router = createBrowserRouter([
         ],
       },
     ],
-  },
-  {
-    path: "login",
-    element: <SignIn />,
-  },
-  {
-    path: "feedback",
-    element: <Feedback />,
-  },
+  }
 ]);

@@ -7,8 +7,11 @@ import ArrowDown from './arrowDown.svg'
 import ShareButton from './sharebutton.svg'
 import OpenBrowser from './openinbrowser.svg'
 import Menu from './menu.svg'
+import NewBoard from './newboard.svg'
+import Users from './boardusers.svg'
+import ArrowLeft from './arrowLeft.svg'
 
-export {Cancel, ClearInput,Compress,Copy,ArrowDown,Avatar,ShareButton,OpenBrowser,Menu}
+export {Cancel, ClearInput,Compress,Copy,ArrowDown,Avatar,ShareButton,OpenBrowser,Menu,NewBoard,Users,ArrowLeft}
 
 import Logo from './logo.svg'
 export {Logo}

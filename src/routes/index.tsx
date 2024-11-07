@@ -30,6 +30,19 @@ import HTMLPreview from "@/pages/generators/html-preview";
 export const router = createBrowserRouter([
   {
         path: "/",
+
+        element: <Home />,
+    },
+    {
+        path: "/login",
+        element: <SignUp />,
+    },
+    {
+        path: "/feedback",
+        element: <Feedback />
+    }
+])
+
         element: <Home/>,
   },
   {

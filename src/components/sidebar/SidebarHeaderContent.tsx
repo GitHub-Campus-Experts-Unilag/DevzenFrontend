@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Search } from "lucide-react"
 
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
@@ -20,11 +22,14 @@ const SidebarHeaderContent = () => {
     <div className="">
       <div className="flex justify-between items-center gap-4 my-5">
 
-        <img
-          src={logo}
-          alt="DevZen logo"
-          className={`${open ? "block" : "hidden"}`}
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="DevZen logo"
+            className={`${open ? "block" : "hidden"}`}
+          />
+          <span className="sr-only">Home</span>
+        </Link>
 
         <SidebarTrigger className="bg-black-40/15" />
       </div>

@@ -32,7 +32,7 @@ const FormSchema = z.object({
     }).max(500, {
         message: "Message cannot exceed 500 characters."
     })
-})
+});
 
 
 const Contact = () => {
@@ -54,6 +54,7 @@ const Contact = () => {
             id="contact"
             className="my-40"
         >
+
             <header className="text-center">
                 <h2 className="text-gray-10 font-bold text-[clamp(1.5rem,calc(1.5rem+2vw),3.5rem)]">Contact us</h2>
                 <p className="text-gray-30 text-[1.375rem] mb-24">Need any feature improved on or included? Send us an email.</p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
-import SignIn from './signPage'; 
+import SignIn from './signPage';
 
 interface JwtPayload {
   username: string;
@@ -54,7 +54,7 @@ export function SignUp() {
   };
 
   return (
-    <SignIn 
+    <SignIn
       token={token}
       decodedToken={decodedToken}
       loading={loading}
@@ -85,8 +85,6 @@ import zenboardIcon from "../../assets/icons/zenboard.svg";
 import convertersIcon from "../../assets/icons/converters.svg";
 
 import blurImg from "../../assets/images/blur.png";
-
-export const AuthPage = () => {
 
 const AuthPage = () => {
   return (
@@ -192,6 +190,7 @@ const AuthPage = () => {
         className="hidden lg:absolute lg:-bottom-[75px] lg:-right-[500px] lg:inline-block"
       />
     </main>
-  )
+  );
 }
-//export default AuthPage;
+
+export default AuthPage;

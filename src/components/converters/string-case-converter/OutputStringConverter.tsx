@@ -9,24 +9,25 @@ import { useState } from "react"
 import {ArrowDown, Copy} from "@/assets/svg"
 export const OutputStringConverter = ({inputValue,setDropdown,dropDown,outputValue,setOutputValue}:OutputProps) => {
     const [cases,setCase] = useState('camelCase')
-    const handleCase=(e:any)=>{
-        if(e.target.id == 'camelcase'){
+    const handleCase=(e:React.MouseEvent<HTMLParagraphElement>)=>{
+        const target = e.target as HTMLParagraphElement 
+        if(target.id == 'camelcase'){
           setCase('camelCase')
           setOutputValue(inputValue.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()))
         } 
-        if(e.target.id == 'lowercase'){
+        if(target.id == 'lowercase'){
           setCase('lowercase')
           setOutputValue(inputValue.toLowerCase())
         }
-        if(e.target.id == 'pascalcase'){
+        if(target.id == 'pascalcase'){
           setCase('PascalCase')
           setOutputValue(inputValue.toLowerCase().replace(/(?:^|\s|-|_)\w/g, (match) => match.toUpperCase()).replace(/\s|-|_/g, ""))
         } 
-        if(e.target.id == 'snakecase'){
+        if(target.id == 'snakecase'){
           setCase('snake_case')
           setOutputValue(inputValue.toLowerCase().replace(/\s+/g, '_'))
         } 
-        if(e.target.id == 'uppercase'){
+        if(target.id == 'uppercase'){
           setCase('UPPERCASE')
           setOutputValue(inputValue.toUpperCase())
         }

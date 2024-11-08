@@ -8,6 +8,7 @@ import Feedback from "@/pages/Feedback";
 
 // Quick Sketch
 import Zenboard from "@/pages/quick-sketch/zenboard";
+import Board from "@/components/converters/quick-sketch/Board"
 
 // Formatters
 import JSONFormatter from "@/pages/formatters/json-formatter";
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        index: true,
+        element: <Zenboard />
+      },
+      {
         path: "quick-sketch",
         children: [
           {
@@ -55,6 +60,10 @@ export const router = createBrowserRouter([
           {
             path: "zenboard",
             element: <Zenboard />,
+          },
+          {
+            path: "zenboard/:index",
+            element: <Board />,
           },
         ],
       },

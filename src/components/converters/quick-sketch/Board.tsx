@@ -2,6 +2,7 @@ import * as React from  'react'
 import {AppContext} from './ZenboardContext'
 import {useParams,useNavigate} from 'react-router-dom'
 import BoardNav from './BoardNav'
+import {BoardSketch} from './BoardSketch'
 
 const Board = () => {
   const navigate = useNavigate() 
@@ -30,6 +31,7 @@ const Board = () => {
   return (
     <div className='bg-white h-full'>
         <BoardNav box={box} index={index}/>
+        <BoardSketch />
   </div>
   )
 }

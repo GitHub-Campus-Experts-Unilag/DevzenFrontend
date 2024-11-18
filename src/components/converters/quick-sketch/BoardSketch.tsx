@@ -1,8 +1,7 @@
 import * as React from "react";
-import { Stage, Layer } from "react-konva";
+import { Stage, Layer, Rect } from "react-konva";
 import Konva from "konva";
 import { ACTIONS } from "./constants";
-
 import {
   Square,
   Circle,
@@ -20,12 +19,15 @@ export const BoardSketch = () => {
   const [action, setAction] = React.useState(ACTIONS.SQUARE);
 
   const onPointerMove = () => {};
+
   const onPointerDown = () => {};
+
   const onPointerUp = () => {};
+
   return (
     <>
-      <div className="bg-white relative pt-6">
-        <div className="bg-[#1C1C1C] absolute flex items-center px-12 py-3 rounded-xl gap-x-4 left-24">
+      <div className="bg-white pt-6">
+        <div className="bg-[#1C1C1C] flex items-center px-12 py-3 rounded-xl gap-x-4 w-fit mx-auto">
           <img
             src={Square}
             className={action == ACTIONS.SQUARE ? "bg-[#098597] rounded" : ""}
@@ -91,7 +93,15 @@ export const BoardSketch = () => {
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
         >
-          <Layer></Layer>
+          <Layer>
+            <Rect
+              x={0}
+              y={0}
+              height={window.innerHeight}
+              fill="#ffffff"
+              id="bg"
+            />
+          </Layer>
         </Stage>
       </div>
     </>

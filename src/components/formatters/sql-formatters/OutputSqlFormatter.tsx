@@ -1,13 +1,26 @@
 import * as React from "react";
+import { AppContext } from "../../../Context";
 import { ArrowDown, Copy } from "@/assets/svg";
 import { actions } from "./constants";
+import { format } from "sql-formatter";
+
 const OutputSqlFormatter = () => {
+  const context = React.useContext(AppContext);
+  if (!context) {
+    throw new Error("Component must be used within an AppProvider");
+  }
+  const {
+    dropDown,
+    setDropdown,
+    dropDownSpace,
+    setDropdownSpace,
+    outputSql,
+    setOutputSql,
+  } = context;
+
   const [currentCase, setCase] = React.useState(actions[0].cases[0].level);
   const [space, setSpace] = React.useState(actions[0].spaces[0].space);
-  const [dropdown, setDropdown] = React.useState(false);
-  const [dropdownSpace, setDropdownSpace] = React.useState(false);
 
-  // console.log(actions[0].cases[1].level);
   const handleCase = (index: number) => {
     setCase(actions[0].cases[index].level);
     setDropdown(false);
@@ -17,15 +30,29 @@ const OutputSqlFormatter = () => {
     setSpace(actions[0].spaces[index].space);
     setDropdownSpace(false);
   };
+  React.useEffect(() => {
+    try{
+      const formatted = format(outputSql,{
+        language: 'sql',
+        tabWidth: 4,
+        keywordCase: 'upper'
+      });
+      setOutputSql(formatted)
+      console.log(outputSql)
+    }catch(error){
+      console.error('Error formating query', error)
+    }
+  },[outputSql,setOutputSql]);
   return (
     <div className="sm:w-[50%]">
       <div className="flex items-center gap-4 mb-6">
         <p className="text-[#BDBDBD] font-semibold">Output:</p>
         <div className="flex items-center gap-x-2">
-          <div className="relative">
+          {/* cases */}
+          <div className="relative z-30">
             <div
               className="flex items-center gap-x-1.5 bg-[#303030] rounded-md h-[28px] w-[105px] justify-center"
-              onClick={() => setDropdown(!dropdown)}
+              onClick={() => setDropdown(!dropDown)}
             >
               <p className="text-[#BDBDBD] text-[13px] font-medium">
                 {currentCase}
@@ -34,7 +61,7 @@ const OutputSqlFormatter = () => {
             </div>
             <div
               className={
-                dropdown
+                dropDown
                   ? "bg-[#131313] z-30 absolute font-medium text-[13px] cursor-pointer text-[#BDBDBD] w-[121px] p-2 rounded"
                   : "hidden"
               }
@@ -54,17 +81,17 @@ const OutputSqlFormatter = () => {
           </div>
 
           {/* spaces below */}
-          <div className="relative">
+          <div className="relative z-30">
             <div
               className="flex items-center gap-x-1.5 bg-[#303030] rounded-md h-[28px] w-[105px] justify-center"
-              onClick={() => setDropdownSpace(!dropdownSpace)}
+              onClick={() => setDropdownSpace(!dropDownSpace)}
             >
               <p className="text-[#BDBDBD] text-[13px] font-medium">{space}</p>
               <img src={ArrowDown} alt="ArrowDown" />
             </div>
             <div
               className={
-                dropdownSpace
+                dropDownSpace
                   ? "bg-[#131313] z-30 absolute font-medium text-[13px] cursor-pointer text-[#BDBDBD] w-[121px] p-2 rounded"
                   : "hidden"
               }
@@ -85,9 +112,9 @@ const OutputSqlFormatter = () => {
           <img src={Copy} alt="CopyButton" />
         </div>
       </div>
-      <p className="sm:h-screen h-[50vh]  overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">
-        OutputValue
-      </p>
+      <pre className="sm:h-screen h-[50vh]  overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">
+        {outputSql}
+      </pre>
     </div>
   );
 };

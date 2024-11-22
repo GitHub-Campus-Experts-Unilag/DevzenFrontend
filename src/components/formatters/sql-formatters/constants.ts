@@ -8,8 +8,8 @@ export const actions = [
             {level: 'UPPERCASE'}
         ],
         spaces: [
-            {space: '2 spaces'},
-            {space: '4 spaces'}
+            {space: 2},
+            {space: 4}
         ]
     }
 ]

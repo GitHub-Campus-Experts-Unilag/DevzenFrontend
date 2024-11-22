@@ -34,15 +34,14 @@ const OutputSqlFormatter = () => {
     try{
       const formatted = format(outputSql,{
         language: 'sql',
-        tabWidth: 4,
+        tabWidth: space,
         keywordCase: 'upper'
       });
       setOutputSql(formatted)
-      console.log(outputSql)
     }catch(error){
       console.error('Error formating query', error)
     }
-  },[outputSql,setOutputSql]);
+  },[outputSql,setOutputSql,space]);
   return (
     <div className="sm:w-[50%]">
       <div className="flex items-center gap-4 mb-6">
@@ -86,7 +85,7 @@ const OutputSqlFormatter = () => {
               className="flex items-center gap-x-1.5 bg-[#303030] rounded-md h-[28px] w-[105px] justify-center"
               onClick={() => setDropdownSpace(!dropDownSpace)}
             >
-              <p className="text-[#BDBDBD] text-[13px] font-medium">{space}</p>
+              <p className="text-[#BDBDBD] text-[13px] font-medium">{space} spaces</p>
               <img src={ArrowDown} alt="ArrowDown" />
             </div>
             <div
@@ -103,13 +102,13 @@ const OutputSqlFormatter = () => {
                     className="px-2 py-[5px] rounded-md hover:bg-[#303030]"
                     onClick={() => handleSpace(index)}
                   >
-                    {singleSpace.space}
+                    {singleSpace.space} spaces
                   </p>
                 ))
               )}
             </div>
           </div>
-          <img src={Copy} alt="CopyButton" />
+          <img src={Copy} alt="CopyButton" onClick={()=>navigator.clipboard.writeText(outputSql)}/>
         </div>
       </div>
       <pre className="sm:h-screen h-[50vh]  overflow-auto w-full bg-[#1D1D1D] text-[#D7D7D7] p-4 focus:outline-none">

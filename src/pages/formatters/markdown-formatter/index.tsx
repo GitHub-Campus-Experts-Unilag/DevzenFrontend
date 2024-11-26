@@ -1,9 +1,6 @@
+import MarkdownLayout from '@/components/formatters/markdown-formatter/MarkdownLayout'
 const MarkdownFormatter = () => {
-    return (
-        <div>
-            Markdown Formatter
-        </div>
-    )
+    return <MarkdownLayout />
 }
 
 export default MarkdownFormatter;

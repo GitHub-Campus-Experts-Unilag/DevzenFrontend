@@ -10,6 +10,10 @@ interface AppState {
   setInputSql: (inputSql: string) => void;
   outputSql: string;
   setOutputSql: (inputSql: string) => void;
+  inputMarkdown: string;
+  setInputMarkdown: (inputMarkdown: string) => void;
+  outputMarkdown: string;
+  setOutputMarkdown: (outputMarkdown: string) => void;
 }
 export const AppContext = React.createContext<AppState | undefined>(undefined);
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
@@ -20,8 +24,10 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   ]);
   const [dropDown, setDropdown] = React.useState(false);
   const [dropDownSpace, setDropdownSpace] = React.useState(false);
-  const [inputSql, setInputSql] = React.useState('')
-  const [outputSql, setOutputSql] = React.useState('')
+  const [inputSql, setInputSql] = React.useState("");
+  const [outputSql, setOutputSql] = React.useState("");
+  const [inputMarkdown, setInputMarkdown] = React.useState("");
+  const [outputMarkdown, setOutputMarkdown] = React.useState("");
 
   return (
     <AppContext.Provider
@@ -35,7 +41,11 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         inputSql,
         setInputSql,
         outputSql,
-        setOutputSql
+        setOutputSql,
+        inputMarkdown,
+        outputMarkdown,
+        setInputMarkdown,
+        setOutputMarkdown,
       }}
     >
       {children}

@@ -1,0 +1,11 @@
+export const ACTIONS = {
+    SQUARE: "SQUARE",
+    CIRCLE: "CIRCLE",
+    GALLERY: "GALLERY",
+    KITE: "KITE",
+    TRIANGLE: "TRIANGLE",
+    TSHAPE: "TSHAPE",
+    ERASE: "ERASE",
+    ADD: "ADD",
+    BOARDARROW: "BOARDARROW"
+}

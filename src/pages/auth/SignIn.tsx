@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import SignIn from './signPage';
 
@@ -17,7 +17,7 @@ export function SignUp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -38,14 +38,18 @@ export function SignUp() {
       setToken(jwt);
       const decoded = jwtDecode<JwtPayload>(jwt);
       setDecodedToken(decoded);
-    } catch (error) {
-      setError(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError('An unexpected error occurred');
+      }
     } finally {
       setLoading(false);
     }
   };
 
-  const handleSocialSignIn = (provider) => {
+  const handleSocialSignIn = (provider: string) => {
     if (provider === 'google') {
       window.location.href = 'YOUR_GOOGLE_OAUTH_URL';
     } else if (provider === 'github') {

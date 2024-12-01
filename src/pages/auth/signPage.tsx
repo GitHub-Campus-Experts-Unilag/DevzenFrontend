@@ -1,8 +1,22 @@
-import React from 'react';
 import googleIcon from './icons/google.svg'; // Adjust the path as you see fit
 import githubIcon from './icons/github.svg'; // Adjust the path as you see fit
 
-const SignIn = ({ token, decodedToken, loading, error, handleSignUp, username, setUsername, email, setEmail, password, setPassword, handleSocialSignIn }) => {
+interface SignInProps {
+  token: string | null;
+  decodedToken: unknown;
+  loading: boolean;
+  error: string | null;
+  handleSignUp: (e: React.FormEvent<HTMLFormElement>) => void;
+  username: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
+  handleSocialSignIn: (provider: 'google' | 'github') => void;
+}
+
+const SignIn: React.FC<SignInProps> = ({ token, decodedToken, loading, error, handleSignUp, username, setUsername, email, setEmail, password, setPassword, handleSocialSignIn }) => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-black via-gray-800 to-black">
       <h1 className="text-white font-extrabold text-3xl mb-6">Create Your Account</h1>

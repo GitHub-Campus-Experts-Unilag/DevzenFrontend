@@ -1,5 +1,5 @@
 import * as React from  'react'
-import {AppContext} from './ZenboardContext'
+import {AppContext} from '../../../Context'
 import {Link} from 'react-router-dom';
 
 const formatDate = (): string=>{
@@ -38,7 +38,7 @@ const Boxes = () => {
                                 <p className="font-semibold mb-1">{box} {index}</p>
                                 <p className="text-[13px] font-medium">Last modified: {currentDate}</p>
                             </div>
-                        </Link>
+                        </Link> 
                 </div>
                 )
             })

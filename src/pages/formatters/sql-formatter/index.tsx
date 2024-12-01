@@ -1,9 +1,7 @@
+import SqlFormatterLayout from '@/components/formatters/sql-formatters/SqlFormatter'
+
 const SQLFormatter = () => {
-    return (
-        <div>
-            SQL Formatter
-        </div>
-    )
+    return <SqlFormatterLayout />
 }
 
 export default SQLFormatter;

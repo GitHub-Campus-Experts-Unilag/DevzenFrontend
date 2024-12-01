@@ -1,5 +1,5 @@
 import * as React from  'react'
-import {AppContext} from './ZenboardContext'
+import {AppContext} from '../../../Context'
 import {useParams,useNavigate} from 'react-router-dom'
 import BoardNav from './BoardNav'
 import {BoardSketch} from './BoardSketch'

@@ -10,6 +10,7 @@ import Menu from "./menu.svg";
 import NewBoard from "./newboard.svg";
 import Users from "./boardusers.svg";
 import ArrowLeft from "./arrowLeft.svg";
+import GeneralSql from "./generalsql.svg"
 import Square from "./square.svg";
 import Triangle from "./triangle.svg";
 import Circle from "./circle.svg";
@@ -33,6 +34,7 @@ export {
   NewBoard,
   Users,
   ArrowLeft,
+  GeneralSql
   Square,
   Triangle,
   Circle,

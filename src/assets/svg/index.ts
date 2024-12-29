@@ -34,7 +34,7 @@ export {
   NewBoard,
   Users,
   ArrowLeft,
-  GeneralSql
+  GeneralSql,
   Square,
   Triangle,
   Circle,
